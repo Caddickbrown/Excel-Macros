@@ -30,6 +30,7 @@ Sub MergeExcelFiles()
                 For Each wksCurSheet In wbkSrcBook.Sheets
                     countSheets = countSheets + 1
                     wksCurSheet.Copy after:=wbkCurBook.Sheets(wbkCurBook.Sheets.Count)
+
                 Next
 
                 wbkSrcBook.Close SaveChanges:=False
