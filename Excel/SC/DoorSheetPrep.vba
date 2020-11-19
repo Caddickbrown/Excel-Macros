@@ -1,11 +1,6 @@
-'This code is used to prep the Door Planning Sheet for data entry. '
+'This code is used to prep the Door Planning Sheet for data entry.'
 
-Sub Door_Sheet_Prep()
-'
-' Door_Sheet_Prep Macro
-'
-
-'
+Sub DoorSheetPrep()
 
     Application.Calculation = xlCalculationManual
     Application.ScreenUpdating = False
