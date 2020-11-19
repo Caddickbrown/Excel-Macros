@@ -1,4 +1,4 @@
-'This would fill out the Unit of Measure for batches in IFS - it would bring up menus and select the latest UoM that had been picked'
+'This would fill out the Unit of Measure for batches in IFS - it would bring up menus and select the latest UoM that had been picked. Could likely be used for similar situations'
 
 Set WshShell = WScript.CreateObject("WScript.Shell")
 

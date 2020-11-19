@@ -1,4 +1,4 @@
-'Unfinished Code - was to raise an NCR, not entirely sure what the "t" denotes, but was a rough guide on getting started with it'
+'Unfinished Code - was to raise an NCR in IFS, not entirely sure what the "t" denotes, but was a rough guide on getting started with it'
 
 Go to Shop order
 Detail Tab - Attachments
