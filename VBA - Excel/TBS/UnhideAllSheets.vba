@@ -1,3 +1,4 @@
+'This code will unhide all sheets in the workbook'
 
 
 Sub Unhide_All_Sheets()
