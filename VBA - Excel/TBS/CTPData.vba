@@ -2,31 +2,18 @@
 
 Sub CTP_DATA()
 
-    Columns("G:G").Select
-    Selection.Cut
-    Columns("A:A").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("BI:BI").Select
-    Selection.Cut
-    Columns("BI:BI").Select
-    Columns("C:C").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("CF:CF").Select
-    Selection.Cut
-    Columns("D:D").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("M:M").Select
-    Selection.Cut
-    Columns("E:E").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("H:H").Select
-    Selection.Cut
-    Columns("F:F").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("G:G").Select
-    Columns("G:CI").Select
-    Selection.Delete Shift:=xlToLeft
-    Cells.Select
+    Columns("G:G").Cut
+    Columns("A:A").Insert Shift:=xlToRight
+    Columns("BI:BI").Cut
+    Columns("C:C").Insert Shift:=xlToRight
+    Columns("CF:CF").Cut
+    Columns("D:D").Insert Shift:=xlToRight
+    Columns("M:M").Cut
+    Columns("E:E").Insert Shift:=xlToRight
+    Columns("H:H").Cut
+    Columns("F:F").Insert Shift:=xlToRight
+    Columns("G:CI").Delete Shift:=xlToLeft
     Cells.EntireColumn.AutoFit
-    Range("G5").Select
+    Range("A1").Select
+
 End Sub
