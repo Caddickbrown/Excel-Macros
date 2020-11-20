@@ -1,5 +1,5 @@
 # Macros
-A repo of Macros that I've picked up over the years.
+A repo of Macros that I've made over the years.
 
 This includes Excel Macros (VBA), VBScripts, or anything else that speeds up work.
 
