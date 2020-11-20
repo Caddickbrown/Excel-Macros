@@ -1,11 +1,7 @@
-
+'Used to sort specific data into the correct columns'
 
 Sub CTP_DATA()
-'
-' CTP_DATA Macro
-'
 
-'
     Columns("G:G").Select
     Selection.Cut
     Columns("A:A").Select

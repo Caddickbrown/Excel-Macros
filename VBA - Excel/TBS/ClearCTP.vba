@@ -1,4 +1,4 @@
-
+'Used to clear a template for data entry'
 
 Sub Clear_CTP()
 '

@@ -1,4 +1,4 @@
-
+'This was a macro for sorting Calendar data that had been exported from Outlook'
 
 Sub CALSORT2()
 '

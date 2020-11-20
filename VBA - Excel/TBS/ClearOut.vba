@@ -1,4 +1,4 @@
-
+'Used to Delete out unneeded columns and to Sort data'
 
 Sub ClearOut()
 '
