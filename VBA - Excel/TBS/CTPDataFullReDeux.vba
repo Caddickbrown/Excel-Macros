@@ -79,18 +79,14 @@ Sub CTP_Data_FullReDeux()
         .Apply
     End With
     ActiveSheet.Range("$A:$F").RemoveDuplicates Columns:=2, Header:=xlYes
-    Sheets(2).Select
-    Columns("D:D").Select
-    Selection.Copy
-    Sheets(1).Select
-    Columns("D:D").Select
-    ActiveSheet.Paste
+    Sheets(2).Columns("D:D").Copy
+    Sheets(1).Columns("D:D").Paste
     Range("A1").Select
     Sheets(2).Select
-    Application.SendKeys "{ENTER}"
     ActiveWindow.SelectedSheets.Delete
-    Columns("A:F").Select
-    Selection.Copy
+
+    Application.SendKeys "{ENTER}"
+    Columns("A:F").Copy
     Range("A1").Select
 
     Application.ScreenUpdating = True

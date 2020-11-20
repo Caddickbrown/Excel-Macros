@@ -1,33 +1,20 @@
-
+'Moves columns around and deletes out unneeded stuff'
 
 Sub PM_OrderDashboard()
-'
-' PM_OrderDashboard Macro
-'
-'
+
     Application.ScreenUpdating = False
-    Columns("G:G").Select
-    Selection.Cut
-    Columns("E:E").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("I:I").Select
-    Selection.Cut
-    Columns("F:F").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("J:J").Select
-    Selection.Cut
-    Columns("G:G").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("J:J").Select
-    Selection.Cut
-    Columns("H:H").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("I:I").Select
-    Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
-    Columns("L:L").Select
-    Selection.Cut
-    Columns("J:J").Select
-    Selection.Insert Shift:=xlToRight
+
+    Columns("G:G").Cut
+    Columns("E:E").Insert Shift:=xlToRight
+    Columns("I:I").Cut
+    Columns("F:F").Insert Shift:=xlToRight
+    Columns("J:J").Cut
+    Columns("G:G").Insert Shift:=xlToRight
+    Columns("J:J").Cut
+    Columns("H:H").Insert Shift:=xlToRight
+    Columns("I:I").Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+    Columns("L:L").Cut
+    Columns("J:J").Insert Shift:=xlToRight
     Columns("K:K").Select
     Range(Selection, Selection.End(xlToRight)).Select
     Selection.ClearContents
@@ -37,5 +24,7 @@ Sub PM_OrderDashboard()
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
+
     Application.ScreenUpdating = True
+
 End Sub

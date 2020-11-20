@@ -1,25 +1,16 @@
 'Used to sort specific data into the correct columns'
 
 Sub SHOP_ORDER_STATUS_PM()
-'
-' SHOP_ORDER_STATUS_PM Macro
-'
 
-'
-    Columns("G:G").Select
-    Selection.Cut
-    Columns("E:E").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("J:K").Select
-    Selection.Cut
-    Columns("F:F").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("G:G").Select
-    Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
-    Columns("I:I").Select
+    Columns("G:G").Cut
+    Columns("E:E").Insert Shift:=xlToRight
+    Columns("J:K").Cut
+    Columns("F:F").Insert Shift:=xlToRight
+    Columns("G:G").Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
     Columns("I:CH").Select
     Selection.ClearContents
-    Columns("A:H").Select
-    Columns("A:H").EntireColumn.AutoFit
+    Cells.Select
+    Cells.EntireColumn.AutoFit
     Range("A1").Select
+
 End Sub

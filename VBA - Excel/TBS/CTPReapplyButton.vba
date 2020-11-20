@@ -1,11 +1,7 @@
-
+'Refreshes CTP Data - not entirely sure how'
 
 Sub CTP_REAPPLY_BUTTON()
-'
-' reapply Macro
-'
 
-'
     ActiveSheet.AutoFilter.ApplyFilter
     With ActiveSheet.AutoFilter.Sort
         .Header = xlYes

@@ -1,21 +1,15 @@
 
 
 Sub SDLA3ShopOrderStatus()
-'
-' SDLA3ShopOrderStatus Macro
-'
-'
+
     Application.ScreenUpdating = False
-    Range("E:F,H:I").Select
-    Range("H1").Activate
-    Selection.Delete Shift:=xlToLeft
+
+    Range("E:F,H:I").Delete Shift:=xlToLeft
     Columns("H:I").Select
-    Range(Selection, Selection.End(xlToRight)).Select
-    Selection.ClearContents
+    Range(Selection, Selection.End(xlToRight)).ClearContents
     Cells.Select
     Cells.EntireColumn.AutoFit
-    Range("A1:G1").Select
-    Selection.AutoFilter
+    Range("A1:G1").AutoFilter
     ActiveWorkbook.Worksheets(1).AutoFilter.Sort.SortFields _
         .Clear
     ActiveWorkbook.Worksheets(1).AutoFilter.Sort.SortFields _
@@ -29,5 +23,7 @@ Sub SDLA3ShopOrderStatus()
         .Apply
     End With
     Range("A1").Select
+
     Application.ScreenUpdating = True
+
 End Sub

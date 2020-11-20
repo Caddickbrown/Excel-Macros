@@ -1,4 +1,4 @@
-
+'Makes a function to count format colours'
 
 Function CountColorIf(rSample As Range, rArea As Range) As Long
     Dim rAreaCell As Range

@@ -13,6 +13,7 @@ Sub CTP_DATA()
     Columns("H:H").Cut
     Columns("F:F").Insert Shift:=xlToRight
     Columns("G:CI").Delete Shift:=xlToLeft
+    Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
 

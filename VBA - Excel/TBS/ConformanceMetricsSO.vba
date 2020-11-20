@@ -15,6 +15,7 @@ Sub Conformance_MetricsSO()
     Columns("BM:BM").Cut
     Columns("K:K").Insert Shift:=xlToRight
     Columns("L:CG").Delete Shift:=xlToLeft
+    Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
 

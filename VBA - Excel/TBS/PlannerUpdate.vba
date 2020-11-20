@@ -1,4 +1,4 @@
-
+'Not sure'
 
 Sub Planner_Update()
 
@@ -77,5 +77,7 @@ End With
         End With
 
         Windows("TBSUKShopFloorWorkbench.csv").Close
+
     Application.ScreenUpdating = True
+
 End Sub

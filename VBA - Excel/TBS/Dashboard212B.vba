@@ -1,13 +1,10 @@
-
+'Sorts data by date? Not sure if I have the info - need to see if I can remember details of how it worked'
 
 Sub Dashboard212B()
-'
-' Dashboard212B Macro
-'
-'
+
     Application.ScreenUpdating = False
-    Rows("1:1").Select
-    Selection.AutoFilter
+
+    Rows("1:1").AutoFilter
     ActiveWorkbook.Worksheets(1).AutoFilter.Sort. _
         SortFields.Clear
     ActiveWorkbook.Worksheets(1).AutoFilter.Sort. _
@@ -34,36 +31,22 @@ Sub Dashboard212B()
         .SortMethod = xlPinYin
         .Apply
     End With
-    Columns("G:G").Select
-    Selection.Cut
-    Columns("B:B").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("H:H").Select
-    Selection.Cut
-    Columns("C:C").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("K:K").Select
-    Selection.Cut
-    Columns("D:D").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("BI:BI").Select
-    Selection.Cut
-    Columns("E:E").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("CF:CF").Select
-    Selection.Cut
-    Columns("F:F").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("N:N").Select
-    Selection.Cut
-    Columns("F:F").Select
-    Selection.Insert Shift:=xlToRight
-    Sheets(1).Select
+    Columns("G:G").Cut
+    Columns("B:B").Insert Shift:=xlToRight
+    Columns("H:H").Cut
+    Columns("C:C").Insert Shift:=xlToRight
+    Columns("K:K").Cut
+    Columns("D:D").Insert Shift:=xlToRight
+    Columns("BI:BI").Cut
+    Columns("E:E").Insert Shift:=xlToRight
+    Columns("CF:CF").Cut
+    Columns("F:F").Insert Shift:=xlToRight
+    Columns("N:N").Cut
+    Columns("F:F").Insert Shift:=xlToRight
     Sheets(1).Copy After:=Sheets(1)
     Sheets(1).Select
     Columns("H:H").Select
-    Range(Selection, Selection.End(xlToRight)).Select
-    Selection.ClearContents
+    Range(Selection, Selection.End(xlToRight)).ClearContents
     Cells.Select
     Cells.EntireColumn.AutoFit
     Sheets(2).Select
@@ -95,13 +78,14 @@ Sub Dashboard212B()
         .Apply
     End With
     Columns("H:H").Select
-    Range(Selection, Selection.End(xlToRight)).Select
-    Selection.ClearContents
+    Range(Selection, Selection.End(xlToRight)).ClearContents
     Cells.Select
     Cells.EntireColumn.AutoFit
     Worksheets(2).Range("G:G").Copy Worksheets(1).Range("G:G")
     Sheets(1).Select
     ActiveSheet.Range("$A:$CI").RemoveDuplicates Columns:=1, Header:= _
         xlYes
+
     Application.ScreenUpdating = True
+
 End Sub

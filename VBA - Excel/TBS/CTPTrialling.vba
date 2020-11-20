@@ -1,11 +1,7 @@
-
+'Seems to copy a sheet? Not really sure'
 
 Sub CTPTRIALING()
-'
-' CTPTRIALING Macro
-'
 
-'
     Worksheets(1).Activate
     Worksheets(1).Copy Before:=Sheets(2)
     Dim rs As Worksheet
