@@ -3,6 +3,8 @@ A repo of Macros that I've made/acquired over the years.
 
 This includes Excel Macros (VBA), VBScripts, or anything else that speeds up work.
 
+Before I start - and just to set the expectation - I'm aware of these working on Windows and this is what they were built for. However, I have no idea if they would/could work anywhere else. If someone is able to let me know, great - but otherwise I've no idea.
+
 The plan is to copy these verbatim and then tweak and cut them down to basic user guide that can be understood by anyone. This will give anyone the knowledge I picked up in my first years of coding in an easily digestible format. From there I can build out this guide into a bit of an instruction manual. There will be a lot of different random macros to begin with - but they will disappear with time and anything that is duplicated will go.
 
 I'm always up for suggestions, ideas, or recommendations - if you have any feel free to drop me a message on Twitter: [@caddickbrown](https://twitter.com/caddickbrown)
