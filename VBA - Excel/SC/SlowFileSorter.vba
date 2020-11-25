@@ -25,6 +25,7 @@ Sub MonthlyStockOnHandProcessor()
     Sheets("Summary").Select
     ActiveSheet.PivotTables("PivotTable1").PivotCache.Refresh
     Sheets("3 - KREP004P3").Select
+    Range("A1").Select
 
     Application.Calculation = xlCalculationAutomatic
     Application.ScreenUpdating = True
