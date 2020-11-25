@@ -8,88 +8,51 @@ Sub PressPlans()
     Application.EnableEvents = False
 
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet1").Select
     Sheets("Sheet1").Name = "12000T"
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet2").Select
     Sheets("Sheet2").Name = "750T"
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet3").Select
     Sheets("Sheet3").Name = "1250T"
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet4").Select
     Sheets("Sheet4").Name = "25002000T"
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet5").Select
     Sheets("Sheet5").Name = "30001000RR"
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet6").Select
     Sheets("Sheet6").Name = "DDP"
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet7").Select
     Sheets("Sheet7").Name = "LightCell"
     Sheets.Add After:=ActiveSheet
-    Sheets("Sheet8").Select
     Sheets("Sheet8").Name = "Open"
     Sheets("Part Information").Select
-    Columns("D:D").Select
-    Selection.Cut
-    Columns("A:A").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("F:F").Select
-    Selection.Cut
-    Columns("B:B").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("H:H").Select
-    Selection.Cut
-    Columns("C:C").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("I:I").Select
-    Selection.Cut
-    Columns("D:D").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("J:J").Select
-    Selection.Cut
-    Columns("E:E").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("M:M").Select
-    Selection.Cut
-    Columns("F:F").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("I:I").Select
-    Selection.Cut
-    Columns("G:G").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("O:O").Select
-    Selection.Cut
-    Columns("H:H").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("P:P").Select
-    Selection.Cut
-    Columns("I:I").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("U:U").Select
-    Selection.Cut
-    Columns("J:J").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("Q:Q").Select
-    Selection.Cut
-    Columns("K:K").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("R:R").Select
-    Selection.Cut
-    Columns("L:L").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("W:X").Select
-    Selection.Cut
-    Columns("M:M").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("AB:AB").Select
-    Selection.Cut
-    Columns("O:O").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("A:O").Select
-    Selection.AutoFilter
+    Columns("D:D").Cut
+    Columns("A:A").Insert Shift:=xlToRight
+    Columns("F:F").Cut
+    Columns("B:B").Insert Shift:=xlToRight
+    Columns("H:H").Cut
+    Columns("C:C").Insert Shift:=xlToRight
+    Columns("I:I").Cut
+    Columns("D:D").Insert Shift:=xlToRight
+    Columns("J:J").Cut
+    Columns("E:E").Insert Shift:=xlToRight
+    Columns("M:M").Cut
+    Columns("F:F").Insert Shift:=xlToRight
+    Columns("I:I").Cut
+    Columns("G:G").Insert Shift:=xlToRight
+    Columns("O:O").Cut
+    Columns("H:H").Insert Shift:=xlToRight
+    Columns("P:P").Cut
+    Columns("I:I").Insert Shift:=xlToRight
+    Columns("U:U").Cut
+    Columns("J:J").Insert Shift:=xlToRight
+    Columns("Q:Q").Cut
+    Columns("K:K").Insert Shift:=xlToRight
+    Columns("R:R").Cut
+    Columns("L:L").Insert Shift:=xlToRight
+    Columns("W:X").Cut
+    Columns("M:M").Insert Shift:=xlToRight
+    Columns("AB:AB").Cut
+    Columns("O:O").Insert Shift:=xlToRight
+    Columns("A:O").AutoFilter
     ActiveSheet.Range("$A$1:$O$3052").AutoFilter Field:=7, Criteria1:= _
         "12000T PRESS"
     Selection.Copy
