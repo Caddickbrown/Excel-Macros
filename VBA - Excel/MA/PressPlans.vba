@@ -53,45 +53,33 @@ Sub PressPlans()
     Columns("AB:AB").Cut
     Columns("O:O").Insert Shift:=xlToRight
     Columns("A:O").AutoFilter
-    ActiveSheet.Range("$A$1:$O$3052").AutoFilter Field:=7, Criteria1:= _
-        "12000T PRESS"
+    ActiveSheet.Range("$A$1:$O$3052").AutoFilter Field:=7, Criteria1:= "12000T PRESS"
     Selection.Copy
     Sheets("12000T").Select
     Columns("A:A").Select
     ActiveSheet.Paste
     Sheets("Part Information").Select
     ActiveSheet.ShowAllData
-    Columns("Z:AA").Select
-    Selection.Cut
-    Columns("L:L").Select
-    Selection.Insert Shift:=xlToRight
-    Columns("G:G").Select
-    Selection.Cut
-    Columns("F:F").Select
-    Selection.Insert Shift:=xlToRight
+    Columns("Z:AA").Cut
+    Columns("L:L").Insert Shift:=xlToRight
+    Columns("G:G").Cut
+    Columns("F:F").Insert Shift:=xlToRight
     Columns("R:R").Select
-    Range(Selection, Selection.End(xlToRight)).Select
-    Selection.ClearContents
+    Range(Selection, Selection.End(xlToRight)).ClearContents
     ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:= _
         "750T PRESS"
-    Columns("A:Q").Select
-    Selection.Copy
-    Sheets("750T").Select
-    ActiveSheet.Paste
+    Columns("A:Q").Copy
+    Sheets("750T").Paste
     Sheets("Part Information").Select
     ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:= _
         "1250T PRESS"
-    Columns("A:Q").Select
-    Application.CutCopyMode = False
-    Selection.Copy
+    Columns("A:Q").Copy
     Sheets("1250T").Select
     ActiveSheet.Paste
     Sheets("Part Information").Select
     ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:= _
         "=2000T PRESS", Operator:=xlOr, Criteria2:="=2500T PRESS"
-    Columns("A:Q").Select
-    Application.CutCopyMode = False
-    Selection.Copy
+    Columns("A:Q").Copy
     Sheets("25002000T").Select
     Range("A1").Select
     ActiveSheet.Paste
@@ -100,92 +88,69 @@ Sub PressPlans()
     ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:=Array( _
         "3000T PRESS", "HDA 1000T PRESS", "RR 80 TON RING ROLLER"), Operator:= _
         xlFilterValues
-    Columns("A:Q").Select
-    Application.CutCopyMode = False
-    Selection.Copy
+    Columns("A:Q").Copy
     Sheets("30001000RR").Select
     ActiveSheet.Paste
     Sheets("Part Information").Select
     ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:= _
         "DDP 2000 T"
-    Columns("A:Q").Select
-    Application.CutCopyMode = False
-    Selection.Copy
+    Columns("A:Q").Copy
     Sheets("DDP").Select
     ActiveSheet.Paste
     Sheets("Part Information").Select
     ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:=Array( _
         "1500T PRESS", "200T PRESS", "500T PRESS", "800T PRESS"), Operator:= _
         xlFilterValues
-    Columns("A:Q").Select
-    Application.CutCopyMode = False
-    Selection.Copy
+    Columns("A:Q").Copy
     Sheets("LightCell").Select
     ActiveSheet.Paste
     Sheets("Part Information").Select
-    ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:= _
-        "HDA OPEN FORGE"
-    Columns("A:Q").Select
-    Application.CutCopyMode = False
-    Selection.Copy
-    Sheets("Open").Select
-    ActiveSheet.Paste
-    Columns("A:Q").Select
-    Selection.AutoFilter
+    ActiveSheet.Range("$A$1:$Q$3052").AutoFilter Field:=6, Criteria1:= "HDA OPEN FORGE"
+    Columns("A:Q").Copy
+    Sheets("Open").Paste
+    Columns("A:Q").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
     Sheets("LightCell").Select
-    Columns("A:Q").Select
-    Selection.AutoFilter
+    Columns("A:Q").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
     Sheets("DDP").Select
-    Columns("A:Q").Select
-    Selection.AutoFilter
+    Columns("A:Q").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
     Sheets("30001000RR").Select
-    Columns("A:Q").Select
-    Selection.AutoFilter
+    Columns("A:Q").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
     Sheets("25002000T").Select
-    Columns("A:Q").Select
-    Selection.AutoFilter
+    Columns("A:Q").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
     Sheets("1250T").Select
-    Columns("A:Q").Select
-    Selection.AutoFilter
+    Columns("A:Q").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
     Sheets("750T").Select
-    Columns("A:Q").Select
-    Selection.AutoFilter
+    Columns("A:Q").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
     Sheets("12000T").Select
-    Columns("D:D").Select
-    Application.CutCopyMode = False
-    Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+    Columns("D:D").Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
     Columns("G:G").Select
     Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
     Selection.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
-    Range("D1").Select
-    ActiveCell.FormulaR1C1 = "Temp"
-    Range("G1").Select
-    ActiveCell.FormulaR1C1 = "Setup"
-    Range("H1").Select
-    ActiveCell.FormulaR1C1 = "Temp"
-    Columns("A:R").Select
-    Selection.AutoFilter
+    Range("D1").FormulaR1C1 = "Temp"
+    Range("G1").FormulaR1C1 = "Setup"
+    Range("H1").FormulaR1C1 = "Temp"
+    Columns("A:R").AutoFilter
     Cells.Select
     Cells.EntireColumn.AutoFit
     Range("A1").Select
