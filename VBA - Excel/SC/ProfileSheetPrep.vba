@@ -8,26 +8,27 @@ Sub ProfilesSheetPrep()
     Application.EnableEvents = False
 
     Sheets("Branch data dump").Select
+    Range("A4").Select
     Range(Selection, Selection.End(xlDown)).Select
     Range(Selection, Selection.End(xlToRight)).ClearContents
     Range("A1").Select
     Sheets("Master File").Select
-    Range("AW4:AW26").Copy
-    Range("AX4").PasteSpecial Paste:=xlPasteFormulas, Operation:=xlNone, _
+    Range("BB4:BB25").Copy
+    Range("BC4").PasteSpecial Paste:=xlPasteFormulas, Operation:=xlNone, _
         SkipBlanks:=False, Transpose:=False
-    Range("AW4:AW11").Copy
-    Range("AW4").Select
+    Range("BB4:BB11").Copy
+    Range("BB4").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
-    Range("AW13:AW19").Copy
-    Range("AW13").Select
+    Range("BB13:BB19").Copy
+    Range("BB13").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
-    Range("AW21:AW26").Copy
-    Range("AW21").Select
+    Range("BB21:BB23").Copy
+    Range("BB21").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
-    Range("AX3").Select
+    Range("BC3").Select
     Application.CutCopyMode = False
     With Selection.Interior
         .Pattern = xlSolid
@@ -36,11 +37,11 @@ Sub ProfilesSheetPrep()
         .TintAndShade = 0
         .PatternTintAndShade = 0
     End With
-    Range("AM2").Copy
-    Range("AM2").Select
+    Range("AR2").Copy
+    Range("AR2").Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
-    Columns("AL:AL").Select
+    Columns("AQ:AQ").Select
     Selection.Delete Shift:=xlToLeft
     Range("A1").Select
 

@@ -23,10 +23,10 @@ Sub Door_Sheet_Prep()
     Range("K1").Copy
     Range("A1").Select
     Sheets("TRACKER").Select
-    Range("BH1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+    Range("BG1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
-    Range("R2").Copy
-    Range("Q2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+    Range("Q2").Copy
+    Range("P2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
     Range("M2:M77").Copy
     Range("L2").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
