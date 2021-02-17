@@ -1,5 +1,15 @@
 This is a repo of various useful Excel formulas. =IFERROR(IF(A1="","",FORMULA),"") is recommended to blank out any cells that don't comply. This can be changed if required.
 
+# Template
+## Explanation
+This is a template for how each Item should be laid out.
+## Example (Input = Output):
+Input Value = Output Value
+## Formula
+=FORMULA
+## Variables/Considerations:
+- This contains any points that need explaining for the FORMULA to work.
+
 # Upper Case Month
 ## Explanation
 This formula will give the Month in Upper Case Format
@@ -8,7 +18,7 @@ This formula will give the Month in Upper Case Format
 ## Formula
 =UPPER(TEXT(DATE(YEAR(TODAY()),MONTH(A1),1),"MMM"))
 ## Variables/Considerations:
-MONTH(A1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
+- MONTH(A1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
 
 
 # Next Month Along ("MMM" Format)
