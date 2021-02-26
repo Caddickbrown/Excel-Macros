@@ -61,8 +61,16 @@ This formula will give a suggested Adjustment for your stocks rounded up to the 
 Code: 005
 ## Explanation:
 This is a simple Formula that has promise and could supplant 004. Needs work and may be too simple. Potential for deletion.
-## Example (Input = Output):
 ## Formula:
 =IF(R4>$G4,0,$G4-R4)
 ## Variables/Considerations:
 - This formula does not account for cancelling orders that have already been raised.
+
+# Consistency Check
+Code: 006
+## Explanation:
+This formula checks for consistency in a value (for instance pricing) for data that contains multiple versions of the same product. If there is a difference, it will flag up as "DIFFERENCE"
+## Formula:
+=IF(B2=B3,IF(E2=E3,"","DIFFERENCE"),"")
+## Variables/Considerations:
+- B2/B3 refers to the Product Code and E2/E3 refers to the "Pricing" Value.
