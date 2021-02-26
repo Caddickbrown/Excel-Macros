@@ -51,7 +51,6 @@ This formula will give the date of the Monday in the same Week as input value.
 Code: 004
 ## Explanation:
 This formula will give a suggested Adjustment for your stocks rounded up to the nearest 10. Difficult to explain - but combination of IFERROR, FLOOR/MIN, and CEILING can give required result.
-## Example (Input = Output):
 ## Formula:
 =IFERROR(FLOOR((MIN((BM3-$K3),BA3+BS3)*-1),-10),CEILING($K3-BM3,10))
 ## Variables/Considerations:
