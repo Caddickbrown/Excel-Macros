@@ -1,11 +1,17 @@
 'This code would highlight alternate rows in the selection
+
 Sub HighlightAlternateRows()
-Dim Myrange As Range
-Dim Myrow As Range
-Set Myrange = Selection
-For Each Myrow In Myrange.Rows
-   If Myrow.Row Mod 2 = 1 Then
-      Myrow.Interior.Color = vbCyan
-   End If
-Next Myrow
+
+  Dim Myrange As Range
+  Dim Myrow As Range
+  Set Myrange = Selection
+
+  For Each Myrow In Myrange.Rows
+
+  If Myrow.Row Mod 2 = 1 Then
+        Myrow.Interior.Color = vbCyan
+    End If
+
+    Next Myrow
+
 End Sub
