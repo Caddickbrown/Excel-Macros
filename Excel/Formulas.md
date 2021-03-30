@@ -73,3 +73,16 @@ This formula checks for consistency in a value (for instance pricing) for data t
 =IF(B2=B3,IF(E2=E3,"","DIFFERENCE"),"")
 ## Variables/Considerations:
 - B2/B3 refers to the Product Code and E2/E3 refers to the "Pricing" Value.
+
+# ISDATE
+Code: 007
+## Explanation:
+This formula checks if a cell is of a date format and if so, uses that cell - otherwise it pulls the date from the previous cell. It's good for translating data that has been formatted badly into a better format, and is of a more transitional use to get to where you want. It will likely be deleted soon after.
+## Example (Input = Output):
+Input Value = Output Value
+## Formula:
+=IF(LEFT(CELL("format",B4))="D",B4,A4)
+## Variables/Considerations:
+- This Formula would be put into A5
+- B4 would contain data and dates above them. formatted into sections
+- A4 is the previous date
