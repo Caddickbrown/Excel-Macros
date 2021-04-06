@@ -15,7 +15,7 @@ Sub MonthlyStockOnHandRefresh()
     Range("A2:S2").Select
     Range(Selection, Selection.End(xlDown)).ClearContents
     Range("A2").Select
-    Sheets("3 - KREP004P2").Select
+    Sheets("3 - KREP004P3").Select
     Range("A2:J2").Select
     Range(Selection, Selection.End(xlDown)).ClearContents
     Range("M1").Copy
