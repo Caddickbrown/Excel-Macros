@@ -86,3 +86,16 @@ Input Value = Output Value
 - This Formula would be put into A5
 - B4 would contain data and dates above them. formatted into sections
 - A4 is the previous date
+
+# Pack Size Conversion
+Code: 008
+## Explanation:
+Useful for conversion based on pack sizes from a built up spreadsheet.
+## Example (Input = Output):
+144 = 96
+## Formula:
+=ROUNDUP((F28*VLOOKUP(C28,$C:$M,4,FALSE))/VLOOKUP(C28,$C:$M,8,FALSE),0)
+## Variables/Considerations:
+- F28 is the number of packs that requires conversion
+- VLOOKUP looks for the initial pack size and divides it against the nw pack size.
+- C28 is the value within the data table
