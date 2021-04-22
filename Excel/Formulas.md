@@ -3,7 +3,7 @@ This is a repo of various useful Excel formulas. =IFERROR(IF(A1="","",FORMULA),"
 # Template
 Code: 000
 ## Explanation:
-This is a template for how each Item should be laid out.
+This is a template for how each item should be laid out.
 ## Example (Input = Output):
 Input Value = Output Value
 ## Formula:
