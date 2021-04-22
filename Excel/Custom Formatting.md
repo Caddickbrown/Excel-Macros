@@ -77,7 +77,7 @@ Code: 001
 ## Explanation:
 This format will add thousand separators (ie. 1,000), and blank out any values of 0
 ## Example (Input = Output):
-1000 = 1,000, -1000 = -1,000, 0 = [BLANK]
+1001 = 1,001, -1001 = -1,001, 0 = [BLANK]
 ## Formula:
  #,##0;-#,##0;;@
 
