@@ -19,7 +19,7 @@ To skip a section, include a semi-colon in the proper location, but don't specif
 ## Characters that display natively:
 Some characters appear normally in a number format, while others require special handling. The following characters can be be used without any special handling:
 | Character | Comment |
-| :---- | :------------- |
+| :---: | :---: |
 | $ | Dollar |
 | +- | Plus, Minus |
 | () | Parentheses |
@@ -38,23 +38,23 @@ Some characters appear normally in a number format, while others require special
 ## Escaping characters:
 Some characters won't work correctly in a custom number format without being escaped. For example, the asterisk (*), hash (#), and percent (%) characters can't be used directly in a custom number format – they won't appear in the result. The escape character in custom number formats is the backslash (\ ). By placing the backslash before the character, you can use them in custom number formats:
 | Value     | Code     | Result     |
-| :------------- | :------------- | :------------- |
+| :---: | :---: | :---: |
 | 100 | \#0 | #100 |
 | 100 | \*0 | *100 |
 | 100 | \%0 | %100 |
 
 ## Placeholders
 Certain characters have special meaning in custom number format codes. The following characters are key building blocks:
-| Character     | Purpose     |
-| :------------- | :------------- |
-| 0        | Display insignificant zeros        |
-| #        |	Display significant digits
-| ?        |	Display aligned decimals        |
-| .        |	Decimal point        |
-| ,        |	Thousands separator        |
-| *        |	Repeat digit        |
-| _        |	Add space        |
-| @        |	Placeholder for text        |
+| Character | Purpose |
+| :---: | :---: |
+| 0 | Display insignificant zeros |
+| # |	Display significant digits |
+| ? |	Display aligned decimals |
+| . |	Decimal point |
+| , |	Thousands separator |
+| * |	Repeat digit |
+| _ |	Add space |
+| @ |	Placeholder for text |
 - Zero (0) is used to force the display of insignificant zeros when a number has fewer digits than than zeros in the format. For example, the custom - format 0.00 will display zero as 0.00, 1.1 as 1.10 and .5 as 0.50.
 - Pound sign (#) is a placeholder for optional digits. When a number has fewer digits than # symbols in the format, nothing will be displayed. For example, the custom format #.## will display 1.15 as 1.15 and 1.1 as 1.1.
 - Question mark (?) is used to align digits. When a question mark occupies a place not needed in a number, a space will be added to maintain visual alignment.

@@ -1,3 +1,4 @@
+# Formulas
 This is a repo of various useful Excel formulas. =IFERROR(IF(A1="","",FORMULA),"") is recommended to blank out any cells that don't comply. This can be changed if required.
 
 # Template
@@ -22,7 +23,6 @@ This formula will give the Month in Upper Case Format
 =UPPER(TEXT(DATE(YEAR(TODAY()),MONTH(A1),1),"MMM"))
 ## Variables/Considerations:
 - MONTH(A1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
-
 
 # Next Month Along ("MMM" Format)
 Code: 002
