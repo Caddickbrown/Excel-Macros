@@ -1,3 +1,4 @@
+# Custom Formatting
 There are many useful formats in Excel, but you can set it in a custom way yourself using a small code. This guide gives a few that can be useful.
 
 ## Structure and Reference:
@@ -19,20 +20,20 @@ To skip a section, include a semi-colon in the proper location, but don't specif
 Some characters appear normally in a number format, while others require special handling. The following characters can be be used without any special handling:
 | Character     | Comment     |
 | :------------- | :------------- |
-| $        | Dollar       |
-| +-       | Plus, Minus       |
-| ()       | Parentheses       |
-| {}       | Curly braces       |
-| <>       | Less than, greater than       |
-| =        | Equal       |
-| :       | Colon       |
-| ^       | Caret       |
-| '       | Apostrophe       |
-| /       | Forward Slash       |
-| !       | Exclamation point       |
-| &       | Ampersand       |
-| ~       | Tilde       |
-|         | Space Character       |
+| $ | Dollar       |
+| +- | Plus, Minus       |
+| () | Parentheses       |
+| {} | Curly braces       |
+| <> | Less than, greater than       |
+| = | Equal       |
+| : | Colon       |
+| ^ | Caret       |
+| ' | Apostrophe       |
+| / | Forward Slash       |
+| ! | Exclamation point       |
+| & | Ampersand       |
+| ~ | Tilde       |
+|   | Space Character       |
 
 ## Escaping characters:
 Some characters won't work correctly in a custom number format without being escaped. For example, the asterisk (*), hash (#), and percent (%) characters can't be used directly in a custom number format – they won't appear in the result. The escape character in custom number formats is the backslash (\ ). By placing the backslash before the character, you can use them in custom number formats:
