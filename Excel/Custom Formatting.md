@@ -17,7 +17,7 @@ If you provide a number format with just two sections, the first section is used
 To skip a section, include a semi-colon in the proper location, but don't specify a format code.
 
 ## Characters that display natively:
-Some characters appear normally in a number format, while others require special handling. The following characters can be be used without any special handling:
+Some characters appear normally in a number format, while others require special handling. The following characters can be used without any special handling:
 | Character | Comment |
 | :---: | :---: |
 | $ | Dollar |
@@ -37,7 +37,7 @@ Some characters appear normally in a number format, while others require special
 
 ## Escaping characters:
 Some characters won't work correctly in a custom number format without being escaped. For example, the asterisk (*), hash (#), and percent (%) characters can't be used directly in a custom number format – they won't appear in the result. The escape character in custom number formats is the backslash (\ ). By placing the backslash before the character, you can use them in custom number formats:
-| Value     | Code     | Result     |
+| Value | Code | Result |
 | :---: | :---: | :---: |
 | 100 | \#0 | #100 |
 | 100 | \*0 | *100 |
