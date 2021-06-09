@@ -99,3 +99,26 @@ Useful for conversion based on pack sizes from a built up spreadsheet.
 - F28 is the number of packs that requires conversion
 - VLOOKUP looks for the initial pack size and divides it against the nw pack size.
 - C28 is the value within the data table
+
+# Upper Case Month & Year
+Code: 009
+## Explanation:
+This formula will give the Month in Upper Case Format
+## Example (Input = Output):
+25/01/1995 (DMY) = JAN 1995
+## Formula:
+=CONCATENATE(UPPER(TEXT(DATE(YEAR(TODAY()),MONTH(G2),1),"MMM"))," ",YEAR(G2))
+## Variables/Considerations:
+- G2 Points to the cell that you are getting the month from. G2 should be changed to the relevant input cell.
+
+# Year-Month Numeric
+Code: 010
+## Explanation:
+This formula will give the Month in Upper Case Format
+## Example (Input = Output):
+25/01/1995 (DMY) = 1995-01
+## Formula:
+=CONCATENATE(YEAR(G2),"-",TEXT(MONTH(G2),"00"))
+## Variables/Considerations:
+- G2 Points to the cell that you are getting the month from. G2 should be changed to the relevant input cell.
+- This is useful for getting things into date order
