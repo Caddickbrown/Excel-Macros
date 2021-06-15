@@ -122,3 +122,14 @@ This formula will give the Month in Upper Case Format
 ## Variables/Considerations:
 - G2 Points to the cell that you are getting the month from. G2 should be changed to the relevant input cell.
 - This is useful for getting things into date order
+
+# If Character In String
+Code: 011
+## Explanation:
+This formula will give a value based on if a specific singular/set of characters is found in a string.
+## Example (Input = Output):
+/=2, R=1
+## Formula:
+=IF(ISNUMBER(SEARCH("/",AF2)),2,1)
+## Variables/Considerations:
+- AF2 is the cell to look at.
