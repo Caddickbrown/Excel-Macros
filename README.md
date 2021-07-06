@@ -1,7 +1,7 @@
 # Macros
 A repo of Macros that I've made/acquired over the years.
 
-This includes Excel Formulas, Excel Macros (VBA), VBScripts, or anything else that speeds up work.
+This includes Excel Formulas, Excel Macros (VBA), VBScripts, or anything else that speeds up/automates work.
 
 Before I start - and just to set the expectation - I'm aware of these working on Windows and this is what they were built for. However, I have no idea if they would/could work anywhere else. If someone is able to let me know, great - but otherwise I've no idea.
 
