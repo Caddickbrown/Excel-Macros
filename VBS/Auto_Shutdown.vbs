@@ -7,3 +7,6 @@ shellobj.run "cmd"
 wscript.sleep 2000
 shellobj.sendkeys "shutdown-s-f-t"
 Shellobj.sendkeys a
+WshShell.SendKeys "{Enter}"
+
+'Could do with adding multiple choice and a "Custom" button - possibly not doable in VBS'
