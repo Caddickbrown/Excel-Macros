@@ -14,7 +14,7 @@ Else
 	'Open cmd Line'
 	shellobj.run "cmd"
 	'Wait for cmd line to open
-	wscript.sleep 1500
+	wscript.sleep 1000
 	'Shutdown code
 	shellobj.sendkeys "shutdown -s -f -t "
 	'Insert Variable
