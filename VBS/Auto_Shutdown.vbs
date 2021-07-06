@@ -18,7 +18,7 @@ Else
 	'Shutdown code
 	shellobj.sendkeys "shutdown-s-f-t"
 	'Insert Variable
-	Shellobj.sendkeys a
+	shellobj.sendkeys a
 	'Go
-	WshShell.SendKeys "{Enter}"
+	shellobj.sendkeys "{Enter}"
 End If
