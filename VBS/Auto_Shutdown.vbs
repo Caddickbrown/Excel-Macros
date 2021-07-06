@@ -10,15 +10,16 @@ If IsEmpty(tminus) Then
 	MsgBox "The Script has been cancelled"
 Else
 	'Convert to milliseconds
-	tminus=tminus*60000
+	tminus=tminus*60
 	'Open cmd Line'
 	shellobj.run "cmd"
 	'Wait for cmd line to open
 	wscript.sleep 1500
 	'Shutdown code
-	shellobj.sendkeys "shutdown-s-f-t"
+	shellobj.sendkeys "shutdown -s -f -t "
 	'Insert Variable
-	shellobj.sendkeys a
+	wscript.sleep 500
+	shellobj.sendkeys tminus
 	'Go
 	shellobj.sendkeys "{Enter}"
 End If
