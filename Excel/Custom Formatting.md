@@ -1,5 +1,5 @@
 # Custom Formatting
-There are many useful formats in Excel, but you can set it in a custom way yourself using a small code. This guide gives a few that can be useful.
+There are many useful formats in Excel, but you can set customise it yourself using a small code. This guide gives some explanations/examples that can be useful.
 
 ## Structure and Reference:
 Excel custom number formats have a specific structure. Each number format can have up to four sections, separated with semi-colons as follows:
@@ -45,21 +45,11 @@ Some characters won't work correctly in a custom number format without being esc
 
 ## Placeholders
 Certain characters have special meaning in custom number format codes. The following characters are key building blocks:
-| Character | Purpose |
-| :---: | :---: |
-| 0 | Display insignificant zeros |
-| # |	Display significant digits |
-| ? |	Display aligned decimals |
-| . |	Decimal point |
-| , |	Thousands separator |
-| * |	Repeat digit |
-| _ |	Add space |
-| @ |	Placeholder for text |
-- Zero (0) is used to force the display of insignificant zeros when a number has fewer digits than than zeros in the format. For example, the custom - format 0.00 will display zero as 0.00, 1.1 as 1.10 and .5 as 0.50.
-- Pound sign (#) is a placeholder for optional digits. When a number has fewer digits than # symbols in the format, nothing will be displayed. For example, the custom format #.## will display 1.15 as 1.15 and 1.1 as 1.1.
+- Zero (0) is used to force the display of insignificant zeros when a number has fewer digits than zeros in the format. For example, the custom - format 0.00 will display zero as 0.00, 1.1 as 1.10 and .5 as 0.50.
+- Hash (#) is a placeholder for optional "significant" digits. When a number has fewer digits than # symbols in the format, nothing will be displayed. For example, the custom format #.## will display 1.15 as 1.15 and 1.1 as 1.1.
 - Question mark (?) is used to align digits. When a question mark occupies a place not needed in a number, a space will be added to maintain visual alignment.
-- Period (.) is a placeholder for the decimal point in a number. When a period is used in a custom number format, it will always be displayed, regardless of whether the number contains decimal values.
-- Comma (,) is a placeholder for the thousands separators in the number being displayed.  It can be used to define the behavior of digits in relation to the thousands or millions digits.
+- Period/Full Stop (.) is a placeholder for the decimal point in a number. When a period/full stop is used in a custom number format, it will always be displayed, regardless of whether the number contains decimal values.
+- Comma (,) is a placeholder for the thousands separators in the number being displayed.  It can be used to define the behaviour of digits in relation to the thousands or millions digits.
 - Asterisk (*) is used to repeat characters. The character immediately following an asterisk will be repeated to fill remaining space in a cell.
 - Underscore (_ ) is used to add space in a number format. The character immediately following an underscore character controls how much space to add. A common use of the underscore character is to add space to align positive and negative values when a number format is adding parentheses to negative numbers only. For example, the number format "0_);(0)" is adding a bit of space to the right of positive numbers so that they stay aligned with negative numbers, which are enclosed in parentheses.
 - At (@) - placeholder for text. For example, the following number format will display text values in blue:
@@ -76,7 +66,7 @@ Input Value = Output Value Examples (Positive, Negative, 0s)
 # Commas and Blank 0s
 Code: 001
 ## Explanation:
-This format will add thousand separators (ie. 1,000), and blank out any values of 0
+This format will add thousand separators (i.e. 1,000), and blank out any values of 0
 ## Example (Input = Output):
 1001 = 1,001, -1001 = -1,001, 0 = [BLANK]
 ## Formula:
@@ -85,7 +75,7 @@ This format will add thousand separators (ie. 1,000), and blank out any values o
 # Blank 0s Accounting
 Code: 002
 ## Explanation:
-This format will add thousand separators (ie. 1,000), put negative values into brackets, and blank out any values of 0
+This format will add thousand separators (i.e. 1,000), put negative values into brackets, and blank out any values of 0
 ## Example (Input = Output):
 1000 = £1,000, -1000 = £(1000), 0 = [BLANK]
 ## Formula:
