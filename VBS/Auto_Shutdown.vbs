@@ -22,4 +22,6 @@ Else
 	shellobj.sendkeys tminus
 	'Go
 	shellobj.sendkeys "{Enter}"
+	'Close window
+	shellobj.sendkeys "%{F4}"
 End If
