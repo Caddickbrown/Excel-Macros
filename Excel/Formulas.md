@@ -77,7 +77,7 @@ This formula checks for consistency in a value (for instance pricing) for data t
 # ISDATE
 Code: 007
 ## Explanation:
-This formula checks if a cell is of a date format and if so, uses that cell - otherwise it pulls the date from the previous cell. It's good for translating data that has been formatted badly into a better format, and is of a more transitional use to get to where you want. It will likely be deleted soon after.
+This formula checks if a cell is of a date format and if so, uses that cell - otherwise it pulls the date from the previous cell. It's good for translating data that has been formatted badly into a better format, and is of a more transitional use to get to where you want. It will likely be deleted/pasted as values soon after.
 ## Example (Input = Output):
 Input Value = Output Value
 ## Formula:
