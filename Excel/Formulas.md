@@ -20,7 +20,7 @@ This formula will give the Month in Upper Case Format
 ## Example (Input = Output):
 25/01/1995 (DMY) = JAN
 ## Formula:
-=UPPER(TEXT(DATE(YEAR(TODAY()),MONTH(A1),1),"MMM"))
+=UPPER(TEXT(A1,"MMM"))
 ## Variables/Considerations:
 - MONTH(A1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
 
