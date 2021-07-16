@@ -23,5 +23,6 @@ Else
 	'Go
 	shellobj.sendkeys "{Enter}"
 	'Close window
+	wscript.sleep 800
 	shellobj.sendkeys "%{F4}"
 End If
