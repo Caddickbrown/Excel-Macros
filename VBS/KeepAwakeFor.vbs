@@ -20,5 +20,5 @@ Else
           WScript.Sleep(55000)
   a=a+1
   Loop
-	MsgBox "Your Computer is no longer being kept awake."
+	MsgBox "Your computer is no longer being kept awake."
 End If
