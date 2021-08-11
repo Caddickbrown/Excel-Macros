@@ -5,7 +5,10 @@ Sub Planner_Update()
 Dim wbPlan As Workbook
 Dim wbSFWB As Workbook
 
-Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+  Application.ScreenUpdating = False
+  Application.DisplayStatusBar = False
+  Application.EnableEvents = False
 
 Set wbSFWB = Workbooks.Open("M:\Supply Chain\Planning\FG Planning\Pre-Pack Schedule\TBSUKShopFloorWorkbench.csv")
 Set wbPlan = ThisWorkbook
@@ -78,6 +81,9 @@ End With
 
         Windows("TBSUKShopFloorWorkbench.csv").Close
 
-    Application.ScreenUpdating = True
+      Application.EnableEvents = True
+      Application.DisplayStatusBar = True
+      Application.ScreenUpdating = True
+      Application.Calculation = xlCalculationAutomatic
 
 End Sub

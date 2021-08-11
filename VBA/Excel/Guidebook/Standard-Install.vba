@@ -8,10 +8,45 @@ Sub Unhide_All_Sheets()
     Next wks
     Application.ScreenUpdating = True
 End Sub
-Sub UnhideAllRowsColumns()
-  Columns.EntireColumn.Hidden = False
-  Rows.EntireRow.Hidden = False
-End Sub
+Function SumByColour(CellColor As Range, rRange As Range)
+  Dim cSum As Long
+  Dim ColIndex As Integer
+  ColIndex = CellColor.Interior.ColorIndex
+  For Each cl In rRange
+    If cl.Interior.ColorIndex = ColIndex Then
+    cSum = WorksheetFunction.Sum(cl, cSum)
+  End If
+  Next cl
+  SumByColour = cSum
+End Function
+Function CountColourIf(rSample As Range, rArea As Range) As Long
+    Dim rAreaCell As Range
+    Dim lMatchColor As Long
+    Dim lCounter As Long
+    lMatchColor = rSample.Interior.Color
+    For Each rAreaCell In rArea
+        If rAreaCell.Interior.Color = lMatchColor Then
+            lCounter = lCounter + 1
+        End If
+    Next rAreaCell
+    CountColourIf = lCounter
+End Function
+Function GetNumeric(CellRef As String)
+  Dim StringLength As Integer
+  StringLength = Len(CellRef)
+  For i = 1 To StringLength
+  If IsNumeric(Mid(CellRef, i, 1)) Then Result = Result & Mid(CellRef, i, 1)
+  Next i
+  GetNumeric = Result
+End Function
+Function GetText(CellRef As String)
+  Dim StringLength As Integer
+  StringLength = Len(CellRef)
+  For i = 1 To StringLength
+  If Not (IsNumeric(Mid(CellRef, i, 1))) Then Result = Result & Mid(CellRef, i, 1)
+  Next i
+  GetText = Result
+End Function
 Sub MergeExcelFiles()
     Application.Calculation = xlCalculationManual
     Application.ScreenUpdating = False

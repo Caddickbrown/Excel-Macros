@@ -2,7 +2,10 @@
 
 Sub SDLA3ShopOrderStatus()
 
-    Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+  Application.ScreenUpdating = False
+  Application.DisplayStatusBar = False
+  Application.EnableEvents = False
 
     Range("E:F,H:I").Delete Shift:=xlToLeft
     Columns("H:I").Select
@@ -24,6 +27,9 @@ Sub SDLA3ShopOrderStatus()
     End With
     Range("A1").Select
 
+    Application.EnableEvents = True
+    Application.DisplayStatusBar = True
     Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
 
 End Sub

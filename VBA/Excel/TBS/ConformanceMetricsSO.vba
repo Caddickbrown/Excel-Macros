@@ -2,7 +2,10 @@
 
 Sub Conformance_MetricsSO()
 
+    Application.Calculation = xlCalculationManual
     Application.ScreenUpdating = False
+    Application.DisplayStatusBar = False
+    Application.EnableEvents = False
 
     Columns("G:G").Cut
     Columns("E:E").Insert Shift:=xlToRight
@@ -19,6 +22,9 @@ Sub Conformance_MetricsSO()
     Cells.EntireColumn.AutoFit
     Range("A1").Select
 
+    Application.EnableEvents = True
+    Application.DisplayStatusBar = True
     Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
 
 End Sub

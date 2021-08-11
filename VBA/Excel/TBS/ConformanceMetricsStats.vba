@@ -2,19 +2,25 @@
 
 Sub Conformance_MetricsSO_Stats()
 
-    Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+  Application.ScreenUpdating = False
+  Application.DisplayStatusBar = False
+  Application.EnableEvents = False
 
-    Columns("L:L").Cut
-    Columns("B:B").Insert Shift:=xlToRight
-    Columns("M:O").Cut
-    Columns("C:C").Insert Shift:=xlToRight
-    Columns("Q:R").Cut
-    Columns("F:F").Insert Shift:=xlToRight
-    Columns("H:AJ").Delete Shift:=xlToLeft
-    Cells.Select
-    Cells.EntireColumn.AutoFit
-    Range("A1").Select
+  Columns("L:L").Cut
+  Columns("B:B").Insert Shift:=xlToRight
+  Columns("M:O").Cut
+  Columns("C:C").Insert Shift:=xlToRight
+  Columns("Q:R").Cut
+  Columns("F:F").Insert Shift:=xlToRight
+  Columns("H:AJ").Delete Shift:=xlToLeft
+  Cells.Select
+  Cells.EntireColumn.AutoFit
+  Range("A1").Select
 
-    Application.ScreenUpdating = True
+  Application.EnableEvents = True
+  Application.DisplayStatusBar = True
+  Application.ScreenUpdating = True
+  Application.Calculation = xlCalculationAutomatic
 
 End Sub

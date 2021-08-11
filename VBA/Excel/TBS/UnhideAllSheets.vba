@@ -2,13 +2,19 @@
 
 Sub Unhide_All_Sheets()
 
-    Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+  Application.ScreenUpdating = False
+  Application.DisplayStatusBar = False
+  Application.EnableEvents = False
 
-    Dim wks As Worksheet
-    For Each wks In ActiveWorkbook.Worksheets
-        wks.Visible = xlSheetVisible
-    Next wks
+  Dim wks As Worksheet
+  For Each wks In ActiveWorkbook.Worksheets
+      wks.Visible = xlSheetVisible
+  Next wks
 
-    Application.ScreenUpdating = True
+  Application.EnableEvents = True
+  Application.DisplayStatusBar = True
+  Application.ScreenUpdating = True
+  Application.Calculation = xlCalculationAutomatic
 
 End Sub
