@@ -20,7 +20,9 @@ VBA scripts are scripts for Excel sheets. I tended to figure them out through re
 If ever I had an issue with script, I'd just step through it until I found the issue and fix it there.
 
 ## VBScripts
-I used these to mimic keystrokes when I wasn't able to install key mimicking software. They don't need installation to run and can just be used by opening them.
+Not to be confused with VBA as there are a lot of different syntaxes. Could be referred to as VBScripts, VBS Scripts, or VBS in this guide.
+
+I started using these I wasn't able to install key mimicking software. They don't need installation to run and can just be used by opening them. There is _very basic_ UI functionality but nothing extensive. If you can automate a task down to simple sums and keystrokes, then this isn't a bad option. They can run in the background and can be put in the "Startup" folder to run after logging in for the first time.
 
 # Future
 May include Python in the future - but something I need to dabble in myself first.
