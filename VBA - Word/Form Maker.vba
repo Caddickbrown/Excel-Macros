@@ -136,3 +136,25 @@ End Sub
 Private Sub TextBox3_Change()
 
 End Sub
+
+Sub Macro1()
+'
+' Macro1 Macro
+'
+'
+    CommandBars("Navigation").Visible = False
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+        .Text = "SHazna"
+        .Replacement.Text = "Philbert"
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+End Sub
