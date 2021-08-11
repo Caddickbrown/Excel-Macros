@@ -1,9 +1,11 @@
 'This Macro gives the basis for a form that can be filled out as a template - this will need a "UserForm1" creating and any options will need customising.
 
+'This can be put into your standard Module Area
 Sub FormMaker()
     UserForm1.Show
 End Sub
 
+'This is to be put within the UserForm1
 Private Sub UserForm_Initialize()
     ComboBox1.AddItem ("IgG")
     ComboBox1.AddItem ("IgM")
