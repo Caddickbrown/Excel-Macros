@@ -107,7 +107,6 @@ Private Sub CommandButton1_Click()
     End With
     Selection.Find.Execute Replace:=wdReplaceAll
 
-
     CommandBars("Navigation").Visible = False
     Selection.Find.Replacement.ClearFormatting
     With Selection.Find

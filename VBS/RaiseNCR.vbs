@@ -5,19 +5,47 @@ Detail Tab - Attachments
 Non-Conformance report - New
 
 tt
-F8 Wait (Long) Enter
+
+WshShell.SendKeys("{F8}")
+WScript.Sleep 5000 'Waits for system to load
+WshShell.SendKeys "{Enter}" 'Hits Login
+
 tt
-F8 F3 Enter Wait Enter
+WshShell.SendKeys("{F8}")
+WScript.Sleep 500
+WshShell.SendKeys("{F3}")
+WScript.Sleep 5000 'Waits for system to load
+WshShell.SendKeys "{Enter}" 'Hits Login
 t
-Double click? Down 2 Enter
+Double click?
+WshShell.SendKeys "{DOWN 2}" 'Presses Down twice to select info from a dropdown
+WshShell.SendKeys "{Enter}" 'Hits Login
 tt
-F8 Enter Wait (Long)
-Description (LONG wait) (Excel?)
+WshShell.SendKeys("{F8}")
+WScript.Sleep 500
+WshShell.SendKeys("{Enter}")
+WScript.Sleep 5000 'Waits for system to load
+WshShell.SendKeys("Description")
+WScript.Sleep 5000 'Waits for system to load
+(Excel?)
 Next x 2 (How?)
 t
-F8 Wait Long
+WshShell.SendKeys("{F8}")
+WScript.Sleep 5000 'Waits for system to load
 t
-F8 F3 Enter Enter
+WshShell.SendKeys("{F8}")
+WScript.Sleep 500
+WshShell.SendKeys("{F3}")
+WScript.Sleep 500
+WshShell.SendKeys("{Enter}")
+WScript.Sleep 500
+WshShell.SendKeys("{Enter}")
 tt
-F8 F3 Enter Enter
+WshShell.SendKeys("{F8}")
+WScript.Sleep 500
+WshShell.SendKeys("{F3}")
+WScript.Sleep 500
+WshShell.SendKeys("{Enter}")
+WScript.Sleep 500
+WshShell.SendKeys("{Enter}")
 Finish (How?)
