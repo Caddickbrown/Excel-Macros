@@ -15,6 +15,8 @@ tt
 WshShell.SendKeys("{F8}")
 WScript.Sleep 500
 WshShell.SendKeys("{F3}")
+WScript.Sleep 500
+WshShell.SendKeys("{Enter}")
 WScript.Sleep 5000
 WshShell.SendKeys "{Enter}"
 
