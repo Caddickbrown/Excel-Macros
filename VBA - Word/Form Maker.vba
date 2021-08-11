@@ -1,11 +1,7 @@
-'This Macro gives the basis for a form that can be filled out as a template
+'This Macro gives the basis for a form that can be filled out as a template - this will need a "UserForm1" creating and any options will need customising.
 
 Sub FormMaker()
     UserForm1.Show
-End Sub
-
-Private Sub TextBox1_Change()
-
 End Sub
 
 Private Sub UserForm_Initialize()
