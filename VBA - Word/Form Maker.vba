@@ -1,152 +1,41 @@
 'This Macro gives the basis for a form that can be filled out as a template
 
-Private Sub CommandButton2_Click()
+Sub FormMaker()
+    UserForm1.Show
 End Sub
 
-Private Sub cancelBut_Click()
-    stInfo.Hide
-End Sub
-
-Private Sub Label2_Click()
-End Sub
-
-Private Sub OKbut_Click()
-    Dim studentName As Range
-    Set studentName = ActiveDocument.Bookmarks("sName").Range
-    studentName.Text = Me.TextBox1.Value
-    Dim schoolName As Range
-    Set schoolName = ActiveDocument.Bookmarks("sSchool").Range
-    schoolName.Text = Me.TextBox3.Value
-    Dim paperTitle As Range
-    Dim p2Title As Range
-    Dim hTitle As Range
-    Dim h2Title As Range
-    Set paperTitle = ActiveDocument.Bookmarks("pTitle").Range
-    Set h2Title = ActiveDocument.Bookmarks("h2Title").Range
-    Set hTitle = ActiveDocument.Bookmarks("hTitle").Range
-    Set p2Title = ActiveDocument.Bookmarks("p2Title").Range
-    paperTitle.Text = Me.TextBox2.Value
-    p2Title.Text = Me.TextBox2.Value
-    h2Title.Text = Me.TextBox2.Value
-    hTitle.Text = Me.TextBox2.Value
-    hTitle.Font.AllCaps = True
-    h2Title.Font.AllCaps = True
-    Me.Repaint
-    Dim strDocName As String
-    Dim intPos As Integer
-
-    'Find position of extension in file name
-    strDocName = ""
-    intPos = InStrRev(strDocName, ".")
-
-    If intPos = 0 Then
-    ' If the document has not yet been saved - Ask the user to provide a file name
-        strDocName = InputBox("Please enter the name " & _
-            "of your document.")
-    Else
-        ' Strip off extension and add ".txt" extension
-        strDocName = Left(strDocName, intPos - 1)
-        strDocName = strDocName & ".docx"
-    End If
-    ' Save file with new extension
-    ActiveDocument.SaveAs2 FileName:=strDocName, _
-        FileFormat:=wdFormatDocumentDefault
-    stInfo.Hide
-    infoForm.Show
+Private Sub TextBox1_Change()
 
 End Sub
 
-
-
-' Below is in progress work
-
-
-'This Macro gives the basis for a form that can be filled out as a template
+Private Sub UserForm_Initialize()
+    ComboBox1.AddItem ("IgG")
+    ComboBox1.AddItem ("IgM")
+    ComboBox2.AddItem ("blood")
+    ComboBox2.AddItem ("plasma")
+    ComboBox2.AddItem ("serum")
+    ComboBox2.AddItem ("urine")
+    ComboBox2.AddItem ("nasal")
+    ComboBox3.AddItem ("Human")
+    ComboBox3.AddItem ("Canine")
+    ComboBox3.AddItem ("Fish")
+    ComboBox3.AddItem ("Feline")
+    ComboBox3.AddItem ("Bovine")
+    ComboBox4.AddItem ("visually")
+    ComboBox4.AddItem ("reader")
+End Sub
 
 Private Sub CommandButton2_Click()
+    UserForm1.Hide
 End Sub
 
-Private Sub animalBox1_Change()
-    ComboBox1.AddItem ("Human")
-    ComboBox1.AddItem ("Canine")
-    ComboBox1.AddItem ("Fish")
-    ComboBox1.AddItem ("Feline")
-    ComboBox1.AddItem ("Bovine")
-End Sub
+Private Sub CommandButton1_Click()
 
-Private Sub bioBox_Change()
-With ProjectDetails.bioBox
-        .AddItem ("blood")
-        .AddItem ("plasma")
-        .AddItem ("serum")
-        .AddItem ("urine")
-        .AddItem ("nasal")
-    End With
-End Sub
-
-Sub jImmy()
-    stInfo.Show
-End Sub
-
-Private Sub cancelBut_Click()
-    ProjectDetails.Hide
-End Sub
-
-Private Sub ComboBox1_Change()
-
-End Sub
-
-Private Sub interpretBox1_Change()
-    ComboBox1.AddItem ("visually")
-    ComboBox1.AddItem ("reader")
-End Sub
-
-
-Private Sub OKbut_Click()
-
-    Dim companyName As Range
-    Set companyName = ActiveDocument.Bookmarks("companyName").Range
-    companyName.Text = Me.TextBox1.Value
-
-    Dim biomarkerName As Range
-    Set biomarkerName = ActiveDocument.Bookmarks("biomarkerName").Range
-    biomarkerName.Text = Me.TextBox3.Value
-
-    Dim sampleType As Range
-    Set sampleType = ActiveDocument.Bookmarks("sampleType").Range
-    sampleType.Text = Me.bioBox.Value
-
-    Dim conditionDisease As Range
-    Set conditionDisease = ActiveDocument.Bookmarks("conditionDisease").Range
-    conditionDisease.Text = Me.TextBox5.Value
-
-    Dim animalName As Range
-    Set animalName = ActiveDocument.Bookmarks("animalName").Range
-    animalName.Text = Me.animalBox1.Value
-
-    Dim interpretingMethod As Range
-    Set interpretingMethod = ActiveDocument.Bookmarks("interpretingMethod").Range
-    interpretingMethod.Text = Me.interpretBox1.Value
-
-    Me.Repaint
-    ProjectDetails.Hide
-
-End Sub
-
-Private Sub TextBox3_Change()
-
-End Sub
-
-Sub Macro1()
-'
-' Macro1 Macro - This is find and replace but in VBA Format
-'
-'
     CommandBars("Navigation").Visible = False
     Selection.Find.Replacement.ClearFormatting
     With Selection.Find
-        .Text = "SHazna"
-        .Replacement.Text = "Philbert"
+        .Text = "CompanyName"
+        .Replacement.Text = Me.TextBox1.Value
         .Forward = True
         .Wrap = wdFindContinue
         .Format = False
@@ -157,4 +46,88 @@ Sub Macro1()
         .MatchAllWordForms = False
     End With
     Selection.Find.Execute Replace:=wdReplaceAll
+
+    CommandBars("Navigation").Visible = False
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+      .Text = "BiomarkerName"
+      .Replacement.Text = Me.ComboBox1.Value
+      .Forward = True
+      .Wrap = wdFindContinue
+      .Format = False
+      .MatchCase = False
+      .MatchWholeWord = False
+      .MatchWildcards = False
+      .MatchSoundsLike = False
+      .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+
+    CommandBars("Navigation").Visible = False
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+      .Text = "SampleType"
+      .Replacement.Text = Me.ComboBox2.Value
+      .Forward = True
+      .Wrap = wdFindContinue
+      .Format = False
+      .MatchCase = False
+      .MatchWholeWord = False
+      .MatchWildcards = False
+      .MatchSoundsLike = False
+      .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+
+    CommandBars("Navigation").Visible = False
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+      .Text = "ConditionDisease"
+      .Replacement.Text = Me.TextBox2.Value
+      .Forward = True
+      .Wrap = wdFindContinue
+      .Format = False
+      .MatchCase = False
+      .MatchWholeWord = False
+      .MatchWildcards = False
+      .MatchSoundsLike = False
+      .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+
+    CommandBars("Navigation").Visible = False
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+      .Text = "AnimalName"
+      .Replacement.Text = Me.ComboBox3.Value
+      .Forward = True
+      .Wrap = wdFindContinue
+      .Format = False
+      .MatchCase = False
+      .MatchWholeWord = False
+      .MatchWildcards = False
+      .MatchSoundsLike = False
+      .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+
+
+    CommandBars("Navigation").Visible = False
+    Selection.Find.Replacement.ClearFormatting
+    With Selection.Find
+      .Text = "InterpretingMethod"
+      .Replacement.Text = Me.ComboBox4.Value
+      .Forward = True
+      .Wrap = wdFindContinue
+      .Format = False
+      .MatchCase = False
+      .MatchWholeWord = False
+      .MatchWildcards = False
+      .MatchSoundsLike = False
+      .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute Replace:=wdReplaceAll
+
+    UserForm1.Hide
+
 End Sub
