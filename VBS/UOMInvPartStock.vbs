@@ -4,24 +4,32 @@ Set WshShell = WScript.CreateObject("WScript.Shell")
 
 WshShell.AppActivate "Lot Batch Master - Daniel Caddick-Brown @ IFS Applications 8 SP 1 - Live Database - IFS Applications"
 
-'The following part is looped, change the "Do until" to however many loops you want to do'
+'The following part is looped, change the "Do until" to however many loops you want to do
 
-Dim a
-a=0
-Do until a>50
+OrderCount=Int(InputBox("How many orders do you have?","# of Batches...","Whole Numbers Please"))
+'If box is empty or has a qty of 0 then this will cancel the script
+If OrderCount<1 Then
+	'Cancel Box clicked
+	MsgBox "Script Cancelled"
 
-WScript.Sleep 500
-WshShell.SendKeys "{f8}"
-WScript.Sleep 200
-WshShell.SendKeys "{f3}"
-WScript.Sleep 200
-WshShell.SendKeys "{Enter}"
-WScript.Sleep 200
-WshShell.SendKeys "{Enter}"
-WScript.Sleep 200
-WshShell.SendKeys "^{s}"
-WScript.Sleep 200
-WshShell.SendKeys "^{DOWN}"
+  Else
+    a=0
+'Start Loop'
+    Do While a<OrderCount
 
-a=a+1
-Loop
+      WScript.Sleep 500
+      WshShell.SendKeys "{f8}"
+      WScript.Sleep 200
+      WshShell.SendKeys "{f3}"
+      WScript.Sleep 200
+      WshShell.SendKeys "{Enter}"
+      WScript.Sleep 200
+      WshShell.SendKeys "{Enter}"
+      WScript.Sleep 200
+      WshShell.SendKeys "^{s}"
+      WScript.Sleep 200
+      WshShell.SendKeys "^{DOWN}"
+
+      a=a+1
+  Loop
+End If
