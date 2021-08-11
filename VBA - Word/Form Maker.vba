@@ -139,7 +139,7 @@ End Sub
 
 Sub Macro1()
 '
-' Macro1 Macro
+' Macro1 Macro - This is find and replace but in VBA Format
 '
 '
     CommandBars("Navigation").Visible = False

@@ -1,6 +1,6 @@
 'Makes a function to count format colours'
 
-Function CountColorIf(rSample As Range, rArea As Range) As Long
+Function CountColourIf(rSample As Range, rArea As Range) As Long
     Dim rAreaCell As Range
     Dim lMatchColor As Long
     Dim lCounter As Long
@@ -11,5 +11,5 @@ Function CountColorIf(rSample As Range, rArea As Range) As Long
             lCounter = lCounter + 1
         End If
     Next rAreaCell
-    CountColorIf = lCounter
+    CountColourIf = lCounter
 End Function

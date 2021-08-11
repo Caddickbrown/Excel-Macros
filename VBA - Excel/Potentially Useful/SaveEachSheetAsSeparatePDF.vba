@@ -1,5 +1,4 @@
-'This code will save each worsheet as a separate PDF
-'You will have to change the folder location to use this code.
+'This code will save each worsheet as a separate PDF. You will have to change the folder location to use this code.
 
 Sub SaveWorksheetAsPDF()
 
