@@ -14,8 +14,8 @@ I'm always up for suggestions, ideas, or recommendations - if you have any feel 
 ## Excel
 Various Excel formulas that are of use, albeit perhaps a bit niche. They should be more complicated than a single formula, generally a combination used in a novel way.
 
-## VBA Scripts
-VBA scripts are scripts for Excel sheets. I tended to figure them out through recording actions and reviewing script in the VBA editor. I would then jigsaw things together. I would add a few things into every macro to speed things up and cut down on anything that wasn't needed in the script.
+## VBA
+VBA scripts are scripts generally for Excel sheets, but also can be used in other Office Programs. I tended to figure them out through recording actions and reviewing script in the VBA editor. I would then jigsaw things together. I would add a few things into every macro to speed things up and cut down on anything that wasn't needed in the script.
 
 If ever I had an issue with script, I'd just step through it until I found the issue and fix it there.
 
