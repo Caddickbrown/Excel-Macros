@@ -7,20 +7,25 @@ Non-Conformance report - New
 tt
 
 WshShell.SendKeys("{F8}")
-WScript.Sleep 5000 'Waits for system to load
-WshShell.SendKeys "{Enter}" 'Hits Login
+WScript.Sleep 5000
+WshShell.SendKeys "{Enter}"
 
 tt
+
 WshShell.SendKeys("{F8}")
 WScript.Sleep 500
 WshShell.SendKeys("{F3}")
-WScript.Sleep 5000 'Waits for system to load
-WshShell.SendKeys "{Enter}" 'Hits Login
+WScript.Sleep 5000
+WshShell.SendKeys "{Enter}"
+
 t
+
 Double click?
-WshShell.SendKeys "{DOWN 2}" 'Presses Down twice to select info from a dropdown
-WshShell.SendKeys "{Enter}" 'Hits Login
+WshShell.SendKeys "{DOWN 2}"
+WshShell.SendKeys "{Enter}"
+
 tt
+
 WshShell.SendKeys("{F8}")
 WScript.Sleep 500
 WshShell.SendKeys("{Enter}")
@@ -29,10 +34,14 @@ WshShell.SendKeys("Description")
 WScript.Sleep 5000 'Waits for system to load
 (Excel?)
 Next x 2 (How?)
+
 t
+
 WshShell.SendKeys("{F8}")
 WScript.Sleep 5000 'Waits for system to load
+
 t
+
 WshShell.SendKeys("{F8}")
 WScript.Sleep 500
 WshShell.SendKeys("{F3}")
@@ -40,7 +49,9 @@ WScript.Sleep 500
 WshShell.SendKeys("{Enter}")
 WScript.Sleep 500
 WshShell.SendKeys("{Enter}")
+
 tt
+
 WshShell.SendKeys("{F8}")
 WScript.Sleep 500
 WshShell.SendKeys("{F3}")
