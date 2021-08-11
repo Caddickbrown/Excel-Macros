@@ -4,12 +4,11 @@ Set WshShell=WScript.CreateObject("WScript.Shell")
 MsgBox "Click in the box you wish the info to go into"
 wscript.sleep 10000
 
-'User defines the amount of orders that need to be copied down
+'User defines the amount of orders that need to be copied down, this is specified as an integer
 OrderCount=Int(InputBox("How many orders do you have?","# of Batches...","Whole Numbers Please"))
 
-'If box is empty or has a qty of 0 then this will cancel the script
+'If box is empty, cancelled, or has a qty of 0 then this will cancel the script
 If OrderCount<1 Then
-	'Cancel Box clicked
 	MsgBox "Script Cancelled"
 
 Else
@@ -17,9 +16,8 @@ Else
 	'User defines the value that needs to be inputted
 	ConcVal=InputBox("What info do you need inputting?","Info...")
 
-	'If box is empty this will cancel the script
+	'If box is empty, or cancelled this will cancel the script
 	If IsEmpty(ConcVal) Then
-	'Cancel Box clicked
 	MsgBox "Script Cancelled"
 
 	Else
