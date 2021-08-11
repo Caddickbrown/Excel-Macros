@@ -36,14 +36,14 @@ Else
 			'Sends the inputted info as text
 			shellobj.sendkeys ConcVal
 			WScript.Sleep 500
-	    'Save Record
-	    WshShell.SendKeys "^{s}"
-	    WScript.Sleep 1000
-	    'Accept Dialog box
-	    WshShell.SendKeys "{Enter}"
-	    WScript.Sleep 1000
-	    'Load up next Record
-	    WshShell.SendKeys "^{DOWN}"
+			'Save Record
+			WshShell.SendKeys "^{s}"
+			WScript.Sleep 1000
+			'Accept Dialog box
+			WshShell.SendKeys "{Enter}"
+			WScript.Sleep 1000
+			'Load up next Record
+			WshShell.SendKeys "^{DOWN}"
 
 			a=a+1
 
