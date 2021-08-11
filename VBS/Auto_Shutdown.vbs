@@ -14,15 +14,12 @@ Else
 	'Open cmd Line'
 	shellobj.run "cmd"
 	'Wait for cmd line to open
-	wscript.sleep 800
+	wscript.sleep 500
 	'Shutdown code
-	shellobj.sendkeys "shutdown -s -f -t "
-	'Insert Variable
-	wscript.sleep 100
-	shellobj.sendkeys tminus
+	shellobj.sendkeys "shutdown -s -f -t "&tminus
 	'Go
 	shellobj.sendkeys "{Enter}"
 	'Close window
-	wscript.sleep 800
+	wscript.sleep 500
 	shellobj.sendkeys "%{F4}"
 End If
