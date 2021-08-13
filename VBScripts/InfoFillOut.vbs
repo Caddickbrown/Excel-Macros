@@ -32,7 +32,7 @@ Else
 
 			wscript.sleep 500
 			'Sends the inputted info as text
-			shellobj.sendkeys ConcVal
+			WshShell.sendkeys ConcVal
 			WScript.Sleep 500
 			'Save Record
 			WshShell.SendKeys "^{s}"
