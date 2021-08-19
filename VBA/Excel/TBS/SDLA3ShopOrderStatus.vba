@@ -27,9 +27,9 @@ Sub SDLA3ShopOrderStatus()
     End With
     Range("A1").Select
 
-    Application.EnableEvents = True
-    Application.DisplayStatusBar = True
-    Application.ScreenUpdating = True
-    Application.Calculation = xlCalculationAutomatic
+  Application.EnableEvents = True
+  Application.DisplayStatusBar = True
+  Application.ScreenUpdating = True
+  Application.Calculation = xlCalculationAutomatic
 
 End Sub
