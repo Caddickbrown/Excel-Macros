@@ -133,3 +133,33 @@ This formula will give a value based on if a specific singular/set of characters
 =IF(ISNUMBER(SEARCH("/",AF2)),2,1)
 ## Variables/Considerations:
 - AF2 is the cell to look at.
+
+# Conformance to Plan (12 Week Average)
+Code: 012
+## Explanation:
+Looks at a table of data
+## Example (Input = Output):
+(10+15+12)/(18+20+15) = 69.8%
+## Formula:
+=SUM(SUMIFS('CTP DATA'!$G:$G,'CTP DATA'!$B:$B,"<="&TODAY(),'CTP DATA'!$B:$B,">"&TODAY()-83)/SUMIFS('CTP DATA'!$D:$D,'CTP DATA'!$B:$B,"<="&TODAY(),'CTP DATA'!$B:$B,">"&TODAY()-83))
+## Variables/Considerations:
+- 'CTP DATA'! - needs to point to the relevant sheet for the data.
+- B = Date
+- D = Total Plan
+- G = Total Achieved
+- This can be used to look at last week by replacing TODAY() and TODAY()-83 with TODAY()-7 and TODAY()-90
+
+# Schedule Adherence (12 Week Average)
+Code: 013
+## Explanation:
+Looks at a table of data
+## Example (Input = Output):
+(10+15+12)/(18+20+15) = 69.8%
+## Formula:
+=SUM(SUMIFS('CTP DATA'!$E:$E,'CTP DATA'!$B:$B,"<="&TODAY(),'CTP DATA'!$B:$B,">"&TODAY()-83)/SUMIFS('CTP DATA'!$D:$D,'CTP DATA'!$B:$B,"<="&TODAY(),'CTP DATA'!$B:$B,">"&TODAY()-83))
+## Variables/Considerations:
+- 'CTP DATA'! - needs to point to the relevant sheet for the data.
+- B = Date
+- D = Total Plan
+- E = Completed Planned
+- This can be used to look at last week by replacing TODAY() and TODAY()-83 with TODAY()-7 and TODAY()-90
