@@ -30,3 +30,7 @@ A user guide can be found here: [VBS Guide](https://github.com/Caddickbrown/Prog
 
 # Future
 May include Python in the future - but something I need to dabble in myself first.
+
+# Rules
+1. Nothing will go in here that I do not understand unless otherwise stated.
+2. Do. Not. Talk. About. Fight. Club.
