@@ -28,6 +28,8 @@ I started using these I wasn't able to install key mimicking software. They don'
 
 A user guide can be found here: [VBS Guide](https://github.com/Caddickbrown/Programming-Notes/blob/main/Guidebook/VBS.vbs)
 
+The initial folder contains "General" scripts that can be used by themselves - outside of other software. The "Specific" folder contains scripts more suited for use with other software - and can't be used by themselves.
+
 # Future
 May include Python in the future - but something I need to dabble in myself first.
 
