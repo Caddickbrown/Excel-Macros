@@ -163,3 +163,14 @@ Looks at a table of data
 - D = Total Plan
 - E = Completed Planned
 - This can be used to look at last week by replacing TODAY() and TODAY()-83 with TODAY()-7 and TODAY()-90
+
+# Text Join Across Multiple Lines (Multiple Line Concatenate)
+Code: 014
+## Explanation:
+This formula concatenates all values that match the input value from range of data.
+## Example (Input = Output):
+John's Sales = "£455, £245, £120, £150, £310"
+## Formula:
+=TEXTJOIN(", ",TRUE,IF(Sheet2!A:A=G2,IF(MATCH(Sheet2!H:H,Sheet2!H:H, 0)=MATCH(ROW(Sheet2!H:H),ROW(Sheet2!H:H)),Sheet2!H:H,""),""))
+## Variables/Considerations:
+- This is an INCREDIBLY resource intensive formula as it checks every line multiple times.
