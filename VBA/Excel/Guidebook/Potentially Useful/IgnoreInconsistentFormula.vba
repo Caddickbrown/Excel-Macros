@@ -1,9 +1,9 @@
 Sub IGNOREINCONSISTENT()
-Dim r As Range: Set r = Range("A:AAA")
-Dim cel As Range
+  Dim r As Range: Set r = Range("A:AAA")
+  Dim cel As Range
 
-For Each cel In r
+  For Each cel In r
     cel.Errors(9).Ignore = True
-Next cel
+  Next cel
 
 End Sub
