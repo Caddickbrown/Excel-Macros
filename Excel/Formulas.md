@@ -11,14 +11,14 @@ Input Value = Output Value
 =FORMULA
 ## Variables/Considerations:
 - This contains any points that need explaining for the FORMULA to work.
-- Short-hand Dates should be explained in brackets afterwards as to their format. For instance 25th of January, 1995 can be written as 25/01/1995 (DMY), 1995/01/25 (YMD), 01/25/1995 (MDY). As long as explained, the different formats can be used interchangeably.
+- Short-hand Dates should be explained in brackets afterwards as to their format. For instance 25th of January, 1995 can be written as 25/01/1995 (DD/MM/YYYY), 1995/01/25 (YYYY/MM/DD), 01/25/1995 (MM/DD/YYYY). As long as explained, the different formats can be used interchangeably.
 
 # Upper Case Month
 Code: 001
 ## Explanation:
 This formula will give the Month in Upper Case Format
 ## Example (Input = Output):
-25/01/1995 (DMY) = JAN
+25/01/1995 (DD/MM/YYYY) = JAN
 ## Formula:
 =UPPER(TEXT(A1,"MMM"))
 ## Variables/Considerations:
@@ -40,7 +40,7 @@ Code: 003
 ## Explanation:
 This formula will give the date of the Monday in the same Week as input value.
 ## Example (Input = Output):
-25/01/1995 (DMY) = 23/01/1995
+25/01/1995 (DD/MM/YYYY) = 23/01/1995
 ## Formula:
 =IFERROR(IF(B1="","",A1-WEEKDAY(A1,3)),"")
 ## Variables/Considerations:
@@ -105,7 +105,7 @@ Code: 009
 ## Explanation:
 This formula will give the Month in Upper Case Format
 ## Example (Input = Output):
-25/01/1995 (DMY) = JAN 1995
+25/01/1995 (DD/MM/YYYY) = JAN 1995
 ## Formula:
 =CONCATENATE(UPPER(TEXT(DATE(YEAR(TODAY()),MONTH(G2),1),"MMM"))," ",YEAR(G2))
 ## Variables/Considerations:
@@ -116,7 +116,7 @@ Code: 010
 ## Explanation:
 This formula will give the Month in Upper Case Format
 ## Example (Input = Output):
-25/01/1995 (DMY) = 1995-01
+25/01/1995 (DD/MM/YYYY) = 1995-01
 ## Formula:
 =CONCATENATE(YEAR(G2),"-",TEXT(MONTH(G2),"00"))
 ## Variables/Considerations:
@@ -174,3 +174,17 @@ John's Sales = "£455, £245, £120, £150, £310"
 =TEXTJOIN(", ",TRUE,IF(Sheet2!A:A=G2,IF(MATCH(Sheet2!H:H,Sheet2!H:H, 0)=MATCH(ROW(Sheet2!H:H),ROW(Sheet2!H:H)),Sheet2!H:H,""),""))
 ## Variables/Considerations:
 - This is an INCREDIBLY resource intensive formula as it checks every line multiple times.
+
+# Variable Column SUMIFS
+Code: 015
+## Explanation:
+Used to look through a data dump file to find the right column and add up values.
+## Example (Input = Output):
+Data Dump into Released Orders
+## Formula:
+=SUMIFS(INDEX('Data Dump'!$A:$CA,0,MATCH("Lot Size",'Data Dump'!$A$1:$CA$1,0)),INDEX('Data Dump'!$A:$CA,0,MATCH("Part No",'Data Dump'!$A$1:$CA$1,0)),$A2)
+## Variables/Considerations:
+- 'Data Dump' - the "Data Dump" tab within Excel. The Column range may need extending depending on how large the data dump file is
+- $A2 - Refers to the "Lookup Value"
+- This Needs to MATCH on the headers of the Data Dump File - Only Row 1
+- "Lot Size" and "Part Number" are the columns that are looked up and referred to.
