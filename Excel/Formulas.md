@@ -33,7 +33,7 @@ JAN = FEB
 ## Formula:
 =UPPER(TEXT(DATE(YEAR(TODAY()),MONTH(DATEVALUE(A1&1))+1,1),"MMM"))
 ## Variables/Considerations:
-MONTH(DATEVALUE(A1&1))+1,1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
+- MONTH(DATEVALUE(A1&1))+1,1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
 
 # Monday Date
 Code: 003
