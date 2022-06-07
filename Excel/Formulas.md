@@ -188,3 +188,14 @@ Data Dump into Released Orders
 - $A2 - Refers to the "Lookup Value"
 - This Needs to MATCH on the headers of the Data Dump File - Only Row 1
 - "Lot Size" and "Part Number" are the columns that are looked up and referred to.
+
+# Percentage Through Day
+Code: 016
+## Explanation:
+This will give you a percentage of how far through the day you are. This can be used to calculate rough ideas of where you should be within a daily plan etc.
+## Example (Input = Output):
+07/06/2022 13:27 = 0.55 (55%)
+## Formula:
+=NOW()-TODAY()
+## Variables/Considerations:
+- This formula is volatile and will update at various intervals. It should keep relatively upto date though and give an idea of how far through the day you are.
