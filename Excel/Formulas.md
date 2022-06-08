@@ -199,3 +199,14 @@ This will give you a percentage of how far through the day you are. This can be 
 =NOW()-TODAY()
 ## Variables/Considerations:
 - This formula is volatile and will update at various intervals. It should keep relatively upto date though and give an idea of how far through the day you are.
+
+# Quarter and Year
+Code: 017
+## Explanation:
+This gives you the relevant Quarter and Year for a date.
+## Example (Input = Output):
+"01/01/2022" = "Q1 - 2022"
+## Formula:
+=CONCATENATE("Q",ROUNDUP(MONTH(A2)/3,0)," - ",YEAR(A2))
+## Variables/Considerations:
+- A2 is the cell with the date. The formula will need changing to account for whatever cell you're looking up.
