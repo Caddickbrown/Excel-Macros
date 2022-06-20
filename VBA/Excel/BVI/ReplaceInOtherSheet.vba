@@ -164,7 +164,7 @@ Tempreason = InputBox("What has gone wrong?")
     ActiveCell.Offset(0, 14).Replace What:="On Line", Replacement:="ON HOLD", LookAt:=xlPart _
         , SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
         ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
-    ActiveCell.Offset(0, 17).Range = Tempreason
+    ActiveCell.Offset(0, 17) = Tempreason
     Sheets("NextUp").Select
 
 Application.EnableEvents = True
