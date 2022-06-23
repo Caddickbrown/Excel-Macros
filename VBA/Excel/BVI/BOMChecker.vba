@@ -1,20 +1,8 @@
-Sub ClearOut()
+'The Below are two Macros to make a "BOM Checker Sheet"
 
-Application.Calculation = xlCalculationManual
-Application.ScreenUpdating = False
-Application.DisplayStatusBar = False
-Application.EnableEvents = False
+'NewPart allows to to change the Parent Part Number/Qty to Lookup without the ability to delete the part number making the "Filter" Formula crash Excel and start trying to lookup any blank lines. It then drops down the formulas so as to reserve memory.
 
-    Range("B1:B2") = "-"
-    Range("C6:H9000").ClearContents
-
-Application.EnableEvents = True
-Application.DisplayStatusBar = True
-Application.ScreenUpdating = True
-Application.Calculation = xlCalculationAutomatic
-
-End Sub
-
+'ClearOut clears the Part Number and Qty Safely.
 
 Sub NewPart()
 
@@ -78,3 +66,20 @@ Application.Calculation = xlCalculationAutomatic
 
 End Sub
 
+
+Sub ClearOut()
+
+Application.Calculation = xlCalculationManual
+Application.ScreenUpdating = False
+Application.DisplayStatusBar = False
+Application.EnableEvents = False
+
+    Range("B1:B2") = "-"
+    Range("C6:H9000").ClearContents
+
+Application.EnableEvents = True
+Application.DisplayStatusBar = True
+Application.ScreenUpdating = True
+Application.Calculation = xlCalculationAutomatic
+
+End Sub

@@ -12,6 +12,7 @@ Input Value = Output Value
 ## Variables/Considerations:
 - This contains any points that need explaining for the FORMULA to work.
 - Short-hand Dates should be explained in brackets afterwards as to their format. For instance 25th of January, 1995 can be written as 25/01/1995 (DD/MM/YYYY), 1995/01/25 (YYYY/MM/DD), 01/25/1995 (MM/DD/YYYY). As long as explained, the different formats can be used interchangeably.
+- If a new line is needed to be shown ";" will be used to show it.
 
 # Upper Case Month
 Code: 001
@@ -210,3 +211,16 @@ This gives you the relevant Quarter and Year for a date.
 =CONCATENATE("Q",ROUNDUP(MONTH(A2)/3,0)," - ",YEAR(A2))
 ## Variables/Considerations:
 - A2 is the cell with the date. The formula will need changing to account for whatever cell you're looking up.
+
+# Component List
+Code: 018
+## Explanation:
+This formula will give you a list of component parts for a specific parent part from a list of all Manufacturing Structures. It will "Spill" down into cells below.
+## Example (Input = Output):
+590389 = [; refers to a new line] 60300328;60300483;60300396;28151BID;28033BID;585775;585752;585736
+## Formula:
+=IFERROR(FILTER(Structure!N:N,B1=Structure!C:C),"-")
+## Variables/Considerations:
+- Structure!N:N Refers to Component Part List
+- B1 Refers to the Parent Part you need to Lookup
+- Structure!C:C Refers to Parent Part List

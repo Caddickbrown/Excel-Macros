@@ -1,4 +1,12 @@
-'These are various Macros to Control a "Next Up" Sheet in Excel
+'These are various Macros to Control a "Next Up" Sheet in Excel. They were assigned to buttons to run actions from the one screen. Generally they move things along a "Route" in the different "Operations".
+
+'WarehouseDone - Looks up a value, finds it in a different sheet and changes a value that says "DHR" on the same line to "Warehouse"
+'WarehouseUndo - Looks up a value, finds it in a different sheet and changes it "back" to "DHR" (which is what Warehouse would look up to)
+'PrekitDone - Looks up a value, finds it in a different sheet and changes a value that says "Warehouse" on the same line to "Prekit"
+'PrekitUndo - Looks up a value, finds it in a different sheet and changes it "back" to "Warehouse" (which is what Prekit would look up to)
+'OnLineUndo - Looks up a value, finds it in a different sheet and changes it "back" to "Prekit" (which is what On Line would look up to)
+'OnHold - Looks up a value, finds it in a different sheet and changes it to "ON HOLD"
+'Complete -  Looks up a value, finds it in a different sheet and changes it to "Completed"
 
 Sub WarehouseDone()
 Application.Calculation = xlCalculationManual
