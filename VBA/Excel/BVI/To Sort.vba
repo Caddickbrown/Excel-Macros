@@ -30,13 +30,13 @@ Sub Move_list_generator()
     Set Box_Qty = Worksheets("Box Qty")
     Dim column_count As Integer, boxes As Long, need As Long, delete As Long, yesno As Integer
     Dim SheetName As String
-    SheetName = "Kit Schedule Move List" ' <-------- 1) change this if the sheet name of tyhe auto generated move list changes
+    SheetName = "Kit Schedule Move List" ' <-------- 1) change this if the sheet name of the auto generated move list changes
     Dim located As Boolean
 
     'identifies size of the current data
     delete = List.UsedRange.Rows.Count
 
-    'deletes all data from teh list starting from row 2 until the end as identified above
+    'deletes all data from the list starting from row 2 until the end as identified above
     Range(List.Cells(2, 1), List.Cells(delete, 5)).Clear
 
 restart: ' <----jump point if it needs to be restarted.
@@ -45,8 +45,8 @@ restart: ' <----jump point if it needs to be restarted.
     For Each xworkbook In Application.Workbooks
         If xworkbook.Name <> home.Name Then ' ignores home workbook
             For Each sht In xworkbook.Worksheets 'steps through each sheet in the seleceted workbook.
-                If sht.Name = SheetName Then ' compares teh name of the sheet against the predetemined name 1
-                    If sht.Cells(1, 2) Like ("Kit Schedule Move List*") Then located = True: Exit For 'if correct sheet name checks the cell and checs for the text after the like, this will be the first part of the cell, it doesnot matter what follows.
+                If sht.Name = SheetName Then ' compares the name of the sheet against the predetemined name 1
+                    If sht.Cells(1, 2) Like ("Kit Schedule Move List*") Then located = True: Exit For 'if correct sheet name checks the cell and checs for the text after the like, this will be the first part of the cell, it does not matter what follows.
                 End If
             Next sht
             If located = True Then Exit For ' if found steps out of changing workbook
@@ -65,22 +65,22 @@ restart: ' <----jump point if it needs to be restarted.
     Set Required = Sheets(SheetName) ' defines the sheet copied in as required for later calculations
 
     'finds how many items we need to cycle through
-    need = Required.UsedRange.Rows.Count ' need gives howmany lines of parts need to be called back
+    need = Required.UsedRange.Rows.Count ' need gives how many lines of parts need to be called back
     boxes = Box_Qty.UsedRange.Rows.Count
 
 
-    'cycles through the sheet of requirements to the end copies across teh required data
+    'cycles through the sheet of requirements to the end copies across the required data
     For i = 4 To need ' starts at row 4, below the headings
-        If Trim(Required.Cells(i, 1)) = "AMCO" Then ' makes sure that only the data from AMCO locations is run, if the location is updated in teh future update the text it is searching for.
+        If Trim(Required.Cells(i, 1)) = "AMCO" Then ' makes sure that only the data from AMCO locations is run, if the location is updated in the future update the text it is searching for.
             For j = 2 To boxes ' For each identified part cycles though all of the parts and box sizes present until it finds the part number
                 If Trim(Required.Cells(i, 3)) = Trim(Box_Qty.Cells(j, 1)) Then ' the tirm section removes any additional spaces at hte start / end and ensures everything is a strin whilst comparing, rather than trying to compare a string to number, it doesn't like that
                     List.Cells(i - 2, 1) = Required.Cells(i, 3) ' prints the required part number, i-2 because headings are only 1 line rather than 4.
                     List.Cells(i - 2, 2) = Required.Cells(i, 2) ' prints the required batch
-                    List.Cells(i - 2, 3) = Required.Cells(i, 4) 'prints teh expiry date
+                    List.Cells(i - 2, 3) = Required.Cells(i, 4) 'prints the expiry date
                     List.Cells(i - 2, 4) = Required.Cells(i, 8) ' prints th equantity that is required
 
                     If Box_Qty.Cells(j, 2) <> 0 Then ' confirms that the box size has been inputted and is greater than 0, if not it states box qty needed.
-                        ' If the qty needed is greater than the amount in teh location takes everything from the location
+                        ' If the qty needed is greater than the amount in the location takes everything from the location
                         If Required.Cells(i, 8) >= Required.Cells(i, 7) Then
                             List.Cells(i - 2, 5) = Required.Cells(i, 7)
                         ' if the required parts are in a round number for the box quantity lists the required numbers.
@@ -95,16 +95,16 @@ restart: ' <----jump point if it needs to be restarted.
                     Exit For
                 End If
             Next j
-            'if the part number does not appear in teh box quantity publishes the parts needed and quantities and states box qty needed
+            'if the part number does not appear in the box quantity publishes the parts needed and quantities and states box qty needed
             If List.Cells(i - 2, 1) = "" Then List.Cells(i - 2, 1) = Required.Cells(i, 3): List.Cells(i - 2, 2) = Required.Cells(i, 2): List.Cells(i - 2, 3) = Required.Cells(i, 4): List.Cells(i - 2, 4) = Required.Cells(i, 8): List.Cells(i - 2, 5) = "Box Qty needed"
         End If
     Next i
     'makes the column show as a date
     List.Columns(3).NumberFormat = "dd/mm/yyyy"
-    ' stops alerts then deletes the requirements
+    'stops alerts then deletes the requirements
     Application.DisplayAlerts = False
     Required.delete
-    Application.DisplayAlerts = True ' starts the alerts again to stop me doing something stupid
+    Application.DisplayAlerts = True 'starts the alerts again to stop me doing something stupid
 
 
 
