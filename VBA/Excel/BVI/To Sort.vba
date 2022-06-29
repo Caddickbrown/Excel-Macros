@@ -245,3 +245,336 @@ Range("B7:C7").Select
 
 End Sub
 ```
+
+Sub Demand_File_Generator()
+'
+' Demand_File_Generator Macro
+'
+
+'
+    
+    Application.Calculation = xlCalculationManual
+    Application.ScreenUpdating = False
+    Application.DisplayStatusBar = False
+    Application.EnableEvents = False
+' Clean Up
+    Rows("1:2").Delete
+    
+    Columns("B:B").Insert Shift:=x1ToRight, CopyOrigin:=x1FormatFromLeftOrAbove
+    Columns("B:B").Insert Shift:=x1ToRight, CopyOrigin:=x1FormatFromLeftOrAbove
+    Columns("B:B").Insert Shift:=x1ToRight, CopyOrigin:=x1FormatFromLeftOrAbove
+    Columns("B:B").Insert Shift:=x1ToRight, CopyOrigin:=x1FormatFromLeftOrAbove
+    Columns("G:G").Delete Shift:=xlToLeft
+    
+' Fill out column names
+    Range("B1").FormulaR1C1 = "Dist"
+    Range("C1").FormulaR1C1 = "DW?"
+    Range("D1").FormulaR1C1 = "Priority"
+    Range("E1").FormulaR1C1 = "Country"
+    Range("L1").FormulaR1C1 = "Picks"
+    Range("M1").FormulaR1C1 = "CPU"
+    Range("N1").FormulaR1C1 = "Boxes"
+    Columns("J:K").Cut
+    Columns("O:O").Insert Shift:=xlToRight
+
+    Range("O1").FormulaR1C1 = "Constraint"
+    Range("P1").FormulaR1C1 = "Notes"
+    Range("Q1").FormulaR1C1 = "Action"
+    Range("R1").FormulaR1C1 = "BOM Check"
+' Dist Column
+    Range("B2").FormulaR1C1 = _
+        "=VLOOKUP(RC[-1],'https://bvx.sharepoint.com/Operations/Bidford/[KIT Substitutions Master List (incl item swap list)- 14JAN2022.xlsx]Direct- Indirect PACK TYPE'!C1:C5,5,0)"
+' Double Wraps
+    Range("C2").FormulaR1C1 = _
+        "=HLOOKUP(RC[-2],'S:\Public\Kit Standard Times\[Std Time New Format.xlsm]Kit Data'!R3:R11,9,FALSE)"
+' Country
+    Range("E2").FormulaR1C1 = _
+        "=VLOOKUP(RC[-4],'https://bvx.sharepoint.com/Operations/Bidford/[KIT Substitutions Master List (incl item swap list)- 14JAN2022.xlsx]Direct- Indirect PACK TYPE'!C1:C5,3,0)"
+' Picks
+    Range("J2").FormulaR1C1 = _
+        "=HLOOKUP(RC[-9],'S:\Public\Kit Standard Times\[Std Time New Format.xlsm]Kit Data'!R3:R8,6,FALSE)"
+' CPU
+    Range("K2").FormulaR1C1 = _
+        "=IFERROR(HLOOKUP(RC[-10],'S:\Public\Kit Standard Times\[Std Time New Format.xlsm]Kit Data'!R3:R11,4,FALSE),"""")"
+' Boxes
+    Range("L2").FormulaR1C1 = _
+       "=IFERROR(IF(RC[-9]=" & Chr(34) & "DC" & Chr(34) & ",ROUNDUP(RC[-3]/RC[-1]/10,0),RC[-3]/RC[-1]),RC[-3]/LEFT(RC[-1],2))"
+    
+    Range("B2:E2").AutoFill Destination:=Range("B2:E8000")
+
+    Range("J2:L2").AutoFill Destination:=Range("J2:L8000")
+
+    Columns("A:A").TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Range("O2").FormulaR1C1 = "=IF(AND(RC[-2]="""",RC[-1]=""""),""N"",""Y"")"
+    Range("O2").AutoFill Destination:=Range("O2:O1667")
+    Range("R2").AutoFill Destination:=Range("R2:R1667")
+    Columns("A:R").Select
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("A1:R1").Font.Bold = True
+
+    Cells.EntireColumn.AutoFit
+    Range("I1").FormulaR1C1 = "Qty"
+    Columns("I:I").EntireColumn.AutoFit
+    Range("A1:R1").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorAccent5
+        .TintAndShade = -0.249977111117893
+        .PatternTintAndShade = 0
+    End With
+
+    Range("A1").Select
+    Application.EnableEvents = True
+    Application.DisplayStatusBar = True
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+
+End Sub
+
+
+Sub Record()
+'
+' Record Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+L
+'
+   
+    Dim Total As Integer
+    Dim Count As Integer
+    Total = 0
+    Count = InputBox("How Many Rows?")
+    Do While Total < Count
+    Selection.EntireRow.Insert , CopyOrigin:=x1FormatFromLeftOrAbove
+    Selection.EntireRow.Insert , CopyOrigin:=x1FormatFromLeftOrAbove
+    Selection.Offset(3, 0).Select
+    Total = Total + 1
+    Loop
+End Sub
+
+Sub Merging()
+'
+' Merging Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+P
+'
+    Dim Total As Integer
+    Dim Count As Integer
+    Total = 0
+    Count = InputBox("How Many Rows?")
+    Do While Total < Count
+    Range(ActiveCell.Offset(0, 0), ActiveCell.Offset(2, 0)).Select
+    Selection.Merge
+    Selection.Offset(1, 0).Select
+    Total = Total + 1
+    Loop
+End Sub
+
+
+Sub RenameSheet()
+
+    Dim rs As Worksheet
+
+    For Each rs In Sheets
+    rs.Name = rs.Range("B2")
+    Next rs
+
+End Sub
+
+
+Sub TTC()
+'
+' TTC Macro
+'
+
+'
+    Columns("A:A").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("B:B").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("C:C").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("D:D").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("E:E").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("F:F").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("G:G").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("H:H").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Columns("I:I").Select
+    Application.CutCopyMode = False
+    Selection.TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+End Sub
+
+Sub TEXT_TO_COLUMN()
+'
+' TEXT_TO_COLUMN Macro
+'
+
+'
+    Columns("B:B").Select
+    Selection.TextToColumns Destination:=Range("B1"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=False, Space:=False, Other:=False, FieldInfo _
+        :=Array(1, 1), TrailingMinusNumbers:=True
+    Range("J12").Select
+End Sub
+
+Sub RFQPlanPOs()
+'
+' RFQPlanPOs Macro
+'
+
+'
+    Application.Calculation = xlCalculationManual
+    Application.ScreenUpdating = False
+    Application.DisplayStatusBar = False
+    Application.EnableEvents = False
+    
+    Rows("1:1").AutoFilter
+    Range("A:J,L:L,N:U,W:FI").Delete Shift:=xlToLeft
+    Columns("A:C").EntireColumn.AutoFit
+    Columns("A:C").Select
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("A1:C1").Font.Bold = True
+    Range("A1").Select
+    
+    Application.EnableEvents = True
+    Application.DisplayStatusBar = True
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+    
+End Sub
+
+Sub RFQPlanMRP()
+'
+' RFQPlanMRP Macro
+'
+
+'
+    Application.Calculation = xlCalculationManual
+    Application.ScreenUpdating = False
+    Application.DisplayStatusBar = False
+    Application.EnableEvents = False
+    
+    Rows("1:1").AutoFilter
+    Range("D:J").Delete Shift:=xlToLeft
+    Columns("A:C").EntireColumn.AutoFit
+    Columns("A:C").Select
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("A1:C1").Font.Bold = True
+    Range("A1").Select
+    
+    Application.EnableEvents = True
+    Application.DisplayStatusBar = True
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+    
+End Sub
+
+Sub RFQPlanStock()
+'
+' RFQPlanStock Macro
+'
+
+'
+    Application.Calculation = xlCalculationManual
+    Application.ScreenUpdating = False
+    Application.DisplayStatusBar = False
+    Application.EnableEvents = False
+    
+    Rows("1:1").AutoFilter
+    Range("D:D,F:R,T:BH").Delete Shift:=xlToLeft
+    Columns("A:E").EntireColumn.AutoFit
+    Columns("A:E").Select
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("A1:E1").Font.Bold = True
+    Range("A1").Select
+    
+    Application.EnableEvents = True
+    Application.DisplayStatusBar = True
+    Application.ScreenUpdating = True
+    Application.Calculation = xlCalculationAutomatic
+    
+End Sub
