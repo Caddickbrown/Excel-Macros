@@ -224,3 +224,15 @@ This formula will give you a list of component parts for a specific parent part 
 - Structure!N:N Refers to Component Part List
 - B1 Refers to the Parent Part you need to Lookup
 - Structure!C:C Refers to Parent Part List
+
+# Closest Value
+Code: 019
+## Explanation:
+This gives you the closest value to an inputted value in a cell.
+## Example (Input = Output):
+14 & 20,20,16,15,18,19,17,54,12 = 15
+## Formula:
+=INDEX(B3:B22,MATCH(MIN(ABS(B3:B22-E2)),ABS(B3:B22-E2),0))
+## Variables/Considerations:
+- B3:B22 is your range of values to search within
+- E2 is your search value
