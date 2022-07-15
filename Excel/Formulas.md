@@ -190,8 +190,28 @@ Data Dump into Released Orders
 - This Needs to MATCH on the headers of the Data Dump File - Only Row 1
 - "Lot Size" and "Part Number" are the columns that are looked up and referred to.
 
-# Percentage Through Day
+# Variable Column Layout Lookup
 Code: 016
+## Explanation:
+Pulls through the required column based on searching for the Columns name. 
+## Example (Input = Output):
+|Something|DesCol|Else |
+|:-------:|:----:|:---:|
+|    1    |  2   |  3  |
+|    1    |  2   |  3  |
+|    1    |  2   |  3  |
+= "2";"2";"2"
+## Formula:
+=INDEX('Source Data'!A:DZ,0,MATCH("DesCol",'Source Data'!A$1:DZ$1,0))
+## Variables/Considerations:
+- A:DZ are the Columns your data looks upto.
+- A$:DZ$1 is the row of headers to look through.
+- 'Source Data'! refers to the data to search through to find what you want.
+- This tends to be used in conjunction with a Sumif, lookup, or something else.
+
+
+# Percentage Through Day
+Code: 017
 ## Explanation:
 This will give you a percentage of how far through the day you are. This can be used to calculate rough ideas of where you should be within a daily plan etc.
 ## Example (Input = Output):
@@ -202,7 +222,7 @@ This will give you a percentage of how far through the day you are. This can be 
 - This formula is volatile and will update at various intervals. It should keep relatively upto date though and give an idea of how far through the day you are.
 
 # Quarter and Year
-Code: 017
+Code: 018
 ## Explanation:
 This gives you the relevant Quarter and Year for a date.
 ## Example (Input = Output):
@@ -213,7 +233,7 @@ This gives you the relevant Quarter and Year for a date.
 - A2 is the cell with the date. The formula will need changing to account for whatever cell you're looking up.
 
 # Component List
-Code: 018
+Code: 019
 ## Explanation:
 This formula will give you a list of component parts for a specific parent part from a list of all Manufacturing Structures. It will "Spill" down into cells below.
 ## Example (Input = Output):
@@ -226,7 +246,7 @@ This formula will give you a list of component parts for a specific parent part 
 - Structure!C:C Refers to Parent Part List
 
 # Closest Value
-Code: 019
+Code: 020
 ## Explanation:
 This gives you the closest value to an inputted value in a cell.
 ## Example (Input = Output):
