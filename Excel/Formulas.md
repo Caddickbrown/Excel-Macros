@@ -256,3 +256,18 @@ This gives you the closest value to an inputted value in a cell.
 ## Variables/Considerations:
 - B3:B22 is your range of values to search within
 - E2 is your search value
+
+# Highest Value From Another Column
+Code: 021
+## Explanation:
+This gives you the highest value of an array of "Lookup"s.
+## Example (Input = Output):
+J=12
+J=15
+MAX J = 15
+## Formula:
+=MAX(FILTER(L:L,A:A=A2,0))
+## Variables/Considerations:
+- L:L is the "Data" column that will pull info from.
+- A:A is the "Lookup" Column.
+- A2 is what you're looking up.
