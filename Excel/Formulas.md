@@ -271,3 +271,14 @@ MAX J = 15
 - L:L is the "Data" column that will pull info from.
 - A:A is the "Lookup" Column.
 - A2 is what you're looking up.
+
+# Retrieve the Last entered value from a column
+Code: 022
+## Explanation:
+
+## Example (Input = Output):
+
+## Formula:
+=LOOKUP(2,1/('This Week Tracker'!$F:$F<>""),'This Week Tracker'!$F:$F)
+## Variables/Considerations:
+
