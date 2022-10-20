@@ -209,7 +209,6 @@ Pulls through the required column based on searching for the Columns name.
 - 'Source Data'! refers to the data to search through to find what you want.
 - This tends to be used in conjunction with a Sumif, lookup, or something else.
 
-
 # Percentage Through Day
 Code: 017
 ## Explanation:
@@ -282,3 +281,12 @@ Code: 022
 =LOOKUP(2,1/('This Week Tracker'!$F:$F<>""),'This Week Tracker'!$F:$F)
 ## Variables/Considerations:
 
+# Titles into List
+Code: 023
+## Explanation:
+This formula pulls the headings of columns and dumps them into a list that can be copied elsewhere.
+## Example (Input = Output):
+
+## Formula:
+=UNIQUE(TRANSPOSE(FILTER(1:1,1:1<>"")))
+## Variables/Considerations:
