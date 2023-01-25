@@ -4,7 +4,7 @@ Set WshShell = WScript.CreateObject("WScript.Shell")
 
 'The following part is looped, change the "Do until" to however many loops you want to do
 
-LineCount=Int(InputBox("How many lines do you have?","# of Lines...","Whole Numbers Please"))
+LineCount=Int(InputBox("How many lines do you have? Round up if you aren't sure of the exact number.","# of Lines...","Whole Numbers Please"))
 
 'If box is empty or has a qty of 0 then this will cancel the script
 If LineCount<1 Then
