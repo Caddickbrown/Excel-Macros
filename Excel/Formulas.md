@@ -36,7 +36,7 @@ JAN = FEB
 ## Variables/Considerations:
 - MONTH(DATEVALUE(A1&1))+1,1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
 
-# Monday Date
+# Monday Date (Week Starting)
 Code: 003
 ## Explanation:
 This formula will give the date of the Monday in the same Week as input value.
