@@ -290,3 +290,15 @@ This formula pulls the headings of columns and dumps them into a list that can b
 ## Formula:
 =UNIQUE(TRANSPOSE(FILTER(1:1,1:1<>"")))
 ## Variables/Considerations:
+
+# Concat Sumifs Summary
+Code: 024
+## Explanation:
+This concatenates the sum of data from two different columns based on a lookup value.
+## Formula:
+=CONCATENATE(SUMIFS(ReleasedStarted!E:E,ReleasedStarted!B:B,A29,ReleasedStarted!C:C,"Released")," - Released, ",SUMIFS(ReleasedStarted!E:E,ReleasedStarted!B:B,A29,ReleasedStarted!C:C,"Started")," - Started, ")
+## Variables/Considerations:
+- ReleasedStarted is a Data Dump of Released and Started Orders
+
+
+
