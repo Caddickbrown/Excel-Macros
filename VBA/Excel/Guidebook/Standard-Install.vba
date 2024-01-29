@@ -1,5 +1,4 @@
-'This is a group of Macros that I install as standard to give extra functionality in Excel. They can be found at other points in this guide, but it's useful to have a single place where I can just cut and paste them in
-'Readability isn't as important here and there is no need for explainations as such - hence these will be compacted and explained elsewhere.
+'This is a group of Macros that I install as standard to give extra functionality in Excel. They can be found at other points in this guide, but it's useful to have a single place where I can just cut and paste them in. Readability isn't as important here and there is no need for explainations as such - hence these will be compacted and explained elsewhere.
 Sub Unhide_All_Sheets()
     Application.ScreenUpdating = False
     Dim wks As Worksheet
@@ -87,4 +86,10 @@ Sub FinanceReview()
     Range("I2:M2").FormulaR1C1 = Array("=SUM(C[-7])", "=SUM(C[-7])", "=SUM(C[-7])", "=SUM(C[-7])", "=SUM(RC[-4]:RC[-1])")
     Range("A2").Select
 End Sub
-
+Sub ResetAppAlerts()
+    Application.DisplayAlerts = True
+    Application.EnableEvents = True
+    Application.DisplayStatusBar = True
+    Application.ScreenUpdating = True
+    Application.Calculation = xlAutomatic
+End Sub
