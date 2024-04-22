@@ -195,11 +195,11 @@ Code: 016
 ## Explanation:
 Pulls through the required column based on searching for the Columns name. 
 ## Example (Input = Output):
-|Something|DesCol|Else |
-|:-------:|:----:|:---:|
-|    1    |  2   |  3  |
-|    1    |  2   |  3  |
-|    1    |  2   |  3  |
+| Something | DesCol | Else |
+|:---------:|:------:|:----:|
+|     1     |   2    |  3   |
+|     1     |   2    |  3   |
+|     1     |   2    |  3   |
 = "2";"2";"2"
 ## Formula:
 =INDEX('Source Data'!A:DZ,0,MATCH("DesCol",'Source Data'!A$1:DZ$1,0))
@@ -208,6 +208,7 @@ Pulls through the required column based on searching for the Columns name.
 - A$:DZ$1 is the row of headers to look through.
 - 'Source Data'! refers to the data to search through to find what you want.
 - This tends to be used in conjunction with a Sumif, lookup, or something else.
+- This formula should just be dropped inplace of whatever data you're looking up to.
 
 # Percentage Through Day
 Code: 017
