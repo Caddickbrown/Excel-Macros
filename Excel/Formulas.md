@@ -301,5 +301,25 @@ This concatenates the sum of data from two different columns based on a lookup v
 ## Variables/Considerations:
 - ReleasedStarted is a Data Dump of Released and Started Orders
 
+# Multi-Variable Column INDEX MATCH
+Code: 025
+## Explanation:
+A more complicated Variable Column Layout Lookup.
+## Example (Input = Output):
 
+## Formula:
+=INDEX(INDEX(Sheet1!A:BC,0,MATCH("Return Column",Sheet1!A$1:BC$1,0)),MATCH(A2,INDEX(Sheet1!A:BC,0,MATCH("Lookup Column",Sheet1!A$1:BC$1,0)),0),0)
+## Variables/Considerations:
+- A2 is the value you are looking up.
 
+# Return Value from Variable Column
+Code: 026
+## Explanation:
+This can be used as an "VLOOKUP" for a variable layout.
+## Example (Input = Output):
+
+## Formula:
+=INDIRECT(ADDRESS(ROW(P2),MATCH("Desired Column",$1:$1,0),4)))
+## Variables/Considerations:
+- The column of P2 doesn't really matter, it just returns the row number for the lookup.
+- Could this be done with just HLOOKUP? I suppose the length of the data matters then though.
