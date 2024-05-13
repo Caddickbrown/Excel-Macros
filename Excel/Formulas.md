@@ -34,7 +34,7 @@ JAN = FEB
 ## Formula:
 =UPPER(TEXT(DATE(YEAR(TODAY()),MONTH(DATEVALUE(A1&1))+1,1),"MMM"))
 ## Variables/Considerations:
-- MONTH(DATEVALUE(A1&1))+1,1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
+- MONTH(DATEVALUE(A1&1)+1,1) Points to the cell that you are getting the month from. A1 should be changed to the relevant input cell.
 
 # Monday Date (Week Starting)
 Code: 003
@@ -45,7 +45,7 @@ This formula will give the date of the Monday in the same Week as input value.
 ## Formula:
 =IFERROR(IF(B1="","",A1-WEEKDAY(A1,3)),"")
 ## Variables/Considerations:
-- A1-WEEKDAY(A1,3)) Points to the cell that you are getting the input from. A1 should be changed to the relevant input cell.
+- A1-WEEKDAY(A1,3) Points to the cell that you are getting the input from. A1 should be changed to the relevant input cell.
 - IF(B1=""... gives a cell to look at to see if the row needs to be omitted. It looks for blank cells, and can be the same cell as the input or can be different.
 
 # Stock Suggested Adjustment
@@ -305,8 +305,6 @@ This concatenates the sum of data from two different columns based on a lookup v
 Code: 025
 ## Explanation:
 A more complicated Variable Column Layout Lookup.
-## Example (Input = Output):
-
 ## Formula:
 =INDEX(INDEX(Sheet1!A:BC,0,MATCH("Return Column",Sheet1!A$1:BC$1,0)),MATCH(A2,INDEX(Sheet1!A:BC,0,MATCH("Lookup Column",Sheet1!A$1:BC$1,0)),0),0)
 ## Variables/Considerations:
@@ -316,10 +314,17 @@ A more complicated Variable Column Layout Lookup.
 Code: 026
 ## Explanation:
 This can be used as an "VLOOKUP" for a variable layout.
-## Example (Input = Output):
-
 ## Formula:
 =INDIRECT(ADDRESS(ROW(P2),MATCH("Desired Column",$1:$1,0),4)))
 ## Variables/Considerations:
 - The column of P2 doesn't really matter, it just returns the row number for the lookup.
 - Could this be done with just HLOOKUP? I suppose the length of the data matters then though.
+
+# Sheet Name
+Code: 027
+## Explanation:
+This will return the Sheet name.
+## Formula:
+=TEXTAFTER(CELL("FILENAME",A1),"]")
+## Variables/Considerations:
+- I have no idea how this magic works.
