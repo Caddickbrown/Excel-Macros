@@ -327,4 +327,15 @@ This will return the Sheet name.
 ## Formula:
 =TEXTAFTER(CELL("FILENAME",A1),"]")
 ## Variables/Considerations:
-- I have no idea how this magic works.
+
+
+# Week/Day
+Code: 027
+## Explanation:
+This will return the Week/Day for a date in a 4 digit number.
+## Example (Input = Output):
+22/05/2024 = 2103
+## Formula:
+=CONCATENATE(TEXT(ISOWEEKNUM(A2),"00"),TEXT(WEEKDAY(A2,2),"00"))
+## Variables/Considerations:
+- A2 is where your Start date should go.
